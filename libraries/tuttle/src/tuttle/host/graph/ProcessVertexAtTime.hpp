@@ -56,11 +56,13 @@ std::ostream& operator<<(std::ostream& os, const ProcessVertexAtTime& v);
 }
 }
 
-namespace boost
+namespace tuttle
 {
+namespace host {
 inline std::size_t hash_value(const tuttle::host::graph::ProcessVertexAtTime::Key& k)
 {
     return k.getHash();
+}
 }
 }
 
