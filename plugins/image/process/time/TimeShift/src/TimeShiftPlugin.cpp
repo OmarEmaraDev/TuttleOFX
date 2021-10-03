@@ -1,7 +1,7 @@
 #include "TimeShiftPlugin.hpp"
 #include "TimeShiftDefinitions.hpp"
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 namespace tuttle
 {

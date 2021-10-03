@@ -2,7 +2,7 @@
 #include "SeExprProcess.hpp"
 #include "SeExprDefinitions.hpp"
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <fstream>
 
 namespace tuttle

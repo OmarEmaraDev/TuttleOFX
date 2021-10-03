@@ -1,7 +1,7 @@
 #include "DiffPlugin.hpp"
 #include "DiffProcess.hpp"
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 namespace tuttle
 {

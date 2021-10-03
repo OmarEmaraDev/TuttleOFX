@@ -11,7 +11,7 @@
 #include <tuttle/plugin/IProgress.hpp>
 #include <terry/math.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 #include <vector>
 #include <string>

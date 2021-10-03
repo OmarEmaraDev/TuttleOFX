@@ -8,7 +8,7 @@
 #include <ofxsImageEffect.h>
 
 #include <boost/numeric/ublas/matrix.hpp>
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/array.hpp>
 
 namespace tuttle

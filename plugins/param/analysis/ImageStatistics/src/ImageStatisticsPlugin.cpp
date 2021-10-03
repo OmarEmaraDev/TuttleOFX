@@ -7,7 +7,7 @@
 #include <tuttle/plugin/interact/InteractInfos.hpp>
 #include <tuttle/plugin/numeric/rectOp.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 namespace tuttle
 {

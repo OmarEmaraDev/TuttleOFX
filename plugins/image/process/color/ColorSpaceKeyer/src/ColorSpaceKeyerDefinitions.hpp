@@ -13,7 +13,7 @@
 #include <ofxsImageEffect.h>
 #include <ofxsInteract.h>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/gil/extension/color/hsl.hpp>
 
 #include <boost/scoped_ptr.hpp>

@@ -3,7 +3,7 @@
 #include "LutDefinitions.hpp"
 
 #include <boost/filesystem/operations.hpp>
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/filesystem.hpp>
 
 namespace bfs = boost::filesystem;

@@ -9,7 +9,7 @@
 
 #include <cmath>
 #include "boost/scoped_array.hpp"
-#include "boost/gil/gil_all.hpp"
+#include "boost/gil.hpp"
 
 namespace tuttle
 {

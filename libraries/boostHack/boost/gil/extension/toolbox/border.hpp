@@ -5,7 +5,7 @@
 #ifndef _border_hpp_
 #define _border_hpp_
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 namespace layer
 {

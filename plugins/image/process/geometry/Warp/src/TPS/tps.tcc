@@ -9,7 +9,7 @@
 #include <ofxsImageEffect.h>
 #include <ofxsMultiThread.h>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/numeric/conversion/cast.hpp>
 #include <boost/numeric/ublas/io.hpp>
 #include <boost/numeric/ublas/lu.hpp>

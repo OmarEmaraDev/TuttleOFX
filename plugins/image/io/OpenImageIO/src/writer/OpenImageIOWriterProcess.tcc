@@ -11,7 +11,7 @@
 #include <filesystem.h>
 #include <ctime>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/gil/extension/dynamic_image/dynamic_image_all.hpp>
 #include <boost/scoped_ptr.hpp>
 #include <boost/filesystem/fstream.hpp>

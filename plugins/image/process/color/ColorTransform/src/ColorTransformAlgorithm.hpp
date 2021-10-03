@@ -7,7 +7,7 @@
 
 #include <ofxPixels.h>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/gil/color_base_algorithm.hpp>
 
 #include <boost/numeric/ublas/io.hpp>

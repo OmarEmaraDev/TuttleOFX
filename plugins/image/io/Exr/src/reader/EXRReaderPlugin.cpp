@@ -8,7 +8,7 @@
 #include <ImathBox.h>
 #include <ImfChannelList.h>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/filesystem.hpp>
 
 namespace tuttle

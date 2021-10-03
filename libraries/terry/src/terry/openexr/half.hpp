@@ -8,7 +8,7 @@
 #include <half.h> // OpenEXR Half float
 
 #include <boost/integer.hpp> // for boost::uint_t
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/type_traits.hpp>
 
 namespace boost

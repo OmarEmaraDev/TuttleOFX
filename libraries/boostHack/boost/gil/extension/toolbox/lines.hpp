@@ -5,7 +5,7 @@
 #ifndef _lines_hpp_
 #define _lines_hpp_
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/mpl/vector_c.hpp>
 #include <boost/mpl/for_each.hpp>
 #include <channels.hpp>

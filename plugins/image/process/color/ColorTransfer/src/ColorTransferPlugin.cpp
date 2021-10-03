@@ -2,7 +2,7 @@
 #include "ColorTransferProcess.hpp"
 #include "ColorTransferDefinitions.hpp"
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <terry/numeric/operations.hpp>
 #include <terry/numeric/assign.hpp>
 

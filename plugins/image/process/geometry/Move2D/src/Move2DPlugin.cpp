@@ -2,7 +2,7 @@
 #include "Move2DProcess.hpp"
 #include "Move2DDefinitions.hpp"
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/gil/utilities.hpp>
 #include <boost/gil/point.hpp>
 

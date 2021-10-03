@@ -8,7 +8,7 @@
 #include <tuttle/plugin/interact/interact.hpp>
 #include <tuttle/plugin/interact/overlay.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 namespace tuttle
 {

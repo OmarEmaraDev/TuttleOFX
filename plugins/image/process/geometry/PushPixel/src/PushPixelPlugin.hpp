@@ -5,7 +5,7 @@
 #include <ofxsImageEffect.h>
 #include <tuttle/common/utils/global.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <terry/filter/convolve.hpp>
 
 namespace tuttle

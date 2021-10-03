@@ -1,7 +1,7 @@
 #ifndef RGB_ALGORITHMS_HPP
 #define RGB_ALGORITHMS_HPP
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 namespace boost
 {

@@ -3,7 +3,7 @@
 #include "ColorTransformAlgorithm.hpp"
 #include "ColorTransformDefinitions.hpp"
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/numeric/ublas/traits.hpp>
 
 namespace tuttle

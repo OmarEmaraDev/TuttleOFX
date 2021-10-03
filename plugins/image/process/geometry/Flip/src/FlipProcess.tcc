@@ -1,7 +1,7 @@
 #include "FlipPlugin.hpp"
 
 #include <boost/gil/image_view_factory.hpp>
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 namespace tuttle
 {

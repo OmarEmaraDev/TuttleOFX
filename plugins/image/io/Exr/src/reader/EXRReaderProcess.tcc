@@ -22,7 +22,7 @@
 #include <ImfArray.h>
 #include <ImathVec.h>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/gil/packed_pixel.hpp>
 
 #include <boost/integer.hpp> // for boost::uint_t

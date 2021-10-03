@@ -4,7 +4,7 @@
 
 #include <tuttle/plugin/ofxToGil/point.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/math/special_functions/round.hpp>
 
 namespace tuttle

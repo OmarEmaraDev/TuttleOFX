@@ -6,7 +6,7 @@
 
 #include <imageio.h>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/gil/extension/dynamic_image/dynamic_image_all.hpp>
 #include <boost/filesystem/fstream.hpp>
 #include <boost/mpl/map.hpp>

@@ -8,7 +8,7 @@
 #include <terry/point/operations.hpp>
 #include <terry/filter/gaussianKernel.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/lambda/lambda.hpp>
 
 namespace

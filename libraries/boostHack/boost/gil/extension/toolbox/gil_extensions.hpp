@@ -20,7 +20,7 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/mpl/if.hpp>
 
 #include <boost/gil/extension/toolbox/dynamic_images.hpp>

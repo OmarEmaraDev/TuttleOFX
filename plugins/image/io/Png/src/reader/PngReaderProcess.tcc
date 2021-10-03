@@ -5,7 +5,7 @@
 #include <terry/globals.hpp>
 #include <tuttle/plugin/exceptions.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/gil/extension/dynamic_image/dynamic_image_all.hpp>
 #include <boost/gil/extension/io/png_io.hpp>
 #include <boost/gil/extension/io/png_dynamic_io.hpp>

@@ -13,7 +13,7 @@
 #include <ofxsImageEffect.h>
 #include <ofxsMultiThread.h>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 #include <boost/ptr_container/ptr_vector.hpp>
 #include <boost/array.hpp>

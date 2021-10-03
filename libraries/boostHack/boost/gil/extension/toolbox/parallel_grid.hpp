@@ -6,7 +6,7 @@
 #define _parallel_grid_hpp_
 
 #include <vector>
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/function.hpp>
 
 #include <tbb/parallel_for.h>

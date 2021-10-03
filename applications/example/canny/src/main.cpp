@@ -7,7 +7,7 @@
 
 #include <tuttle/host/Graph.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/gil/image_view_factory.hpp>
 #include <boost/preprocessor/stringize.hpp>
 #include <boost/lexical_cast.hpp>

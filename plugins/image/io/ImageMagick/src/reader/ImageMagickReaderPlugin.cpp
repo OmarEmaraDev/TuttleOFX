@@ -2,7 +2,7 @@
 #include "ImageMagickReaderProcess.hpp"
 #include "ImageMagickReaderDefinitions.hpp"
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/filesystem.hpp>
 
 #include <cstring>

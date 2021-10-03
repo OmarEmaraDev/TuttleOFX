@@ -6,7 +6,7 @@
 #include <terry/point/ostream.hpp>
 #include <tuttle/plugin/exceptions.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/filesystem/fstream.hpp>
 
 #include <boost/scoped_ptr.hpp>

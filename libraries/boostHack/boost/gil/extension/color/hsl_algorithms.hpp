@@ -1,7 +1,7 @@
 #ifndef HSL_ALGORITHMS_HPP
 #define HSL_ALGORITHMS_HPP
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 namespace boost
 {

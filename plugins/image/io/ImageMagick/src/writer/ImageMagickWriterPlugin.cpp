@@ -2,7 +2,7 @@
 #include "ImageMagickWriterPlugin.hpp"
 #include "ImageMagickWriterProcess.hpp"
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 namespace tuttle
 {

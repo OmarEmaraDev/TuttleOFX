@@ -1,6 +1,6 @@
 #include "HistogramPlugin.hpp"
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 #include <boost/smart_ptr/scoped_array.hpp>
 

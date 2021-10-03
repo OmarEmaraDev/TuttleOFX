@@ -2,7 +2,7 @@
 #include "ConstantProcess.hpp"
 #include "ConstantDefinitions.hpp"
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 namespace tuttle
 {

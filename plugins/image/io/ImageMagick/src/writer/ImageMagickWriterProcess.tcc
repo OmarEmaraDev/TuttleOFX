@@ -4,7 +4,7 @@
 #include <terry/globals.hpp>
 #include <tuttle/plugin/exceptions.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/scoped_ptr.hpp>
 #include <boost/filesystem/fstream.hpp>
 

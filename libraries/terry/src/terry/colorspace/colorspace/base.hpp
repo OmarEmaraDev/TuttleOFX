@@ -3,7 +3,7 @@
 
 #include <boost/mpl/vector.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/gil/pixel.hpp>
 #include <boost/gil/locator.hpp>
 #include <boost/gil/typedefs.hpp>

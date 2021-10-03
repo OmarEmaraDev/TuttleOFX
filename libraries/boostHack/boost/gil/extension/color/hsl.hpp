@@ -15,7 +15,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////
 
 #include <boost/gil/color_convert.hpp>
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 namespace boost
 {

@@ -6,7 +6,7 @@
 #define _sections_hpp_
 
 #include <boost/function.hpp>
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 struct sections
 {

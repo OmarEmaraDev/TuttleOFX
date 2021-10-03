@@ -2,7 +2,7 @@
 #define _channels_hpp_
 
 #include <assert.h>
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/function.hpp>
 
 struct channels

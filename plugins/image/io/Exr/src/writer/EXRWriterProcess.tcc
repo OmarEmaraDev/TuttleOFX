@@ -8,7 +8,7 @@
 #include <tuttle/plugin/ImageGilProcessor.hpp>
 #include <tuttle/plugin/exceptions.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/mpl/if.hpp>
 #include <boost/cstdint.hpp>
 #include <boost/assert.hpp>

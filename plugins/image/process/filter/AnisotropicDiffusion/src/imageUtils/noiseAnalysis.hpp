@@ -6,7 +6,7 @@
 #define _NOISE_ANALYSIS_HPP_
 
 #include <cmath>
-#include "boost/gil/gil_all.hpp"
+#include "boost/gil.hpp"
 
 namespace tuttle
 {

@@ -2,7 +2,7 @@
 #include "CheckerboardProcess.hpp"
 #include "CheckerboardDefinitions.hpp"
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 namespace tuttle
 {

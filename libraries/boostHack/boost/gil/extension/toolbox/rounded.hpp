@@ -1,7 +1,7 @@
 #ifndef _rounded_hpp_
 #define _rounded_hpp_
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <blend.hpp>
 
 namespace layer

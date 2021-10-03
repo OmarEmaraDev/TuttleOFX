@@ -10,7 +10,7 @@
 #include <terry/numeric/assign.hpp>
 
 #include <boost/gil/extension/color/convert.hpp>
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 namespace tuttle
 {

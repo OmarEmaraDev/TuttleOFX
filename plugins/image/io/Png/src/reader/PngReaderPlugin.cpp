@@ -6,7 +6,7 @@
 
 #include <tuttle/ioplugin/context/ReaderPlugin.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/filesystem/operations.hpp>
 #include <boost/exception/all.hpp>
 

@@ -8,7 +8,7 @@
 #include <terry/basic_colors.hpp>
 #include <terry/globals.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 namespace tuttle
 {

@@ -2,7 +2,7 @@
 #include "CTLProcess.hpp"
 #include "CTLDefinitions.hpp"
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/algorithm/string/split.hpp>
 
 #include <fstream>

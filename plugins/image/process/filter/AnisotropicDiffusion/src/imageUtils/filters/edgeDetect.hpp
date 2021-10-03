@@ -8,7 +8,7 @@
 #include <cmath>
 #include <vector>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <terry/globals.hpp>
 #include <tuttle/plugin/exceptions.hpp>
 

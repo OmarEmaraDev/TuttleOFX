@@ -3,7 +3,7 @@
 #include "ColorGradientAlgorithm.hpp"
 #include "ColorGradientDefinitions.hpp"
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/algorithm/string/predicate.hpp>
 //#include <boost/algorithm/string/classification.hpp>
 

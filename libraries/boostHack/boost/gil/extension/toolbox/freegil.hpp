@@ -5,7 +5,7 @@
 #ifndef _freegil_hpp_
 #define _freegil_hpp_
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <ft2build.h>
 #include FT_FREETYPE_H
 #include FT_GLYPH_H

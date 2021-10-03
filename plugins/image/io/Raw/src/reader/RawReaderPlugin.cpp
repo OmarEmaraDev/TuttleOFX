@@ -4,7 +4,7 @@
 
 #include <libraw/libraw.h>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/filesystem.hpp>
 
 namespace tuttle

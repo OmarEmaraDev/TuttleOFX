@@ -5,7 +5,7 @@
 #ifndef _pattern_hpp_
 #define _pattern_hpp_
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <blend.hpp>
 
 namespace layer

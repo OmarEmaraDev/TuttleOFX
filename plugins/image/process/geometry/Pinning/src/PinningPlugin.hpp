@@ -12,7 +12,7 @@
 #include <terry/geometry/pinning.hpp>
 #include <terry/sampler/sampler.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 #include <boost/numeric/ublas/matrix.hpp>
 

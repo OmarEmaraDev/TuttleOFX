@@ -5,7 +5,7 @@
 #ifndef _TUTTLE_ANISOTROPICDIFFUSION_INTERPOLATION_HPP_
 #define _TUTTLE_ANISOTROPICDIFFUSION_INTERPOLATION_HPP_
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 #include <cmath>
 

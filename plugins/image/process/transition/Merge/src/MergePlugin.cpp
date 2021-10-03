@@ -6,7 +6,7 @@
 
 #include <tuttle/plugin/numeric/rectOp.hpp>
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 #include <boost/mpl/bool.hpp>
 #include <boost/mpl/if.hpp>

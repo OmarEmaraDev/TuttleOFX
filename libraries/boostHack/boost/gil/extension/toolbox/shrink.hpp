@@ -5,7 +5,7 @@
 #ifndef _shrink_hpp_
 #define _shrink_hpp_
 
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/function.hpp>
 
 namespace layer

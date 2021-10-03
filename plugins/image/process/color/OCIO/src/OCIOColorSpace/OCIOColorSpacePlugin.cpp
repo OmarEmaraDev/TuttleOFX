@@ -4,7 +4,7 @@
 #include <tuttle/common/utils/color.hpp>
 
 #include <boost/filesystem/operations.hpp>
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 #include <boost/filesystem.hpp>
 
 namespace OCIO = OCIO_NAMESPACE;

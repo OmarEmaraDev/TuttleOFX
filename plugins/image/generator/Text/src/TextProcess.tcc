@@ -11,7 +11,7 @@
 #include <tuttle/common/ofx/core.hpp>
 
 #include <boost/gil/extension/color/hsl.hpp>
-#include <boost/gil/gil_all.hpp>
+#include <boost/gil.hpp>
 
 #include <boost/filesystem.hpp>
 #include <boost/ptr_container/ptr_inserter.hpp>
