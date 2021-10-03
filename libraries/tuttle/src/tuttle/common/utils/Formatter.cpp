@@ -6,6 +6,7 @@
 #include <boost/assign/list_of.hpp>
 #include <boost/algorithm/string/case_conv.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/core/null_deleter.hpp>
 
 namespace tuttle
 {
@@ -40,15 +41,10 @@ void Formatter::init_logging()
 {
 #ifndef WITHOUT_BOOST_LOG
     namespace sinks = boost::log::sinks;
-#if BOOST_VERSION >= 105500
-    using boost::empty_deleter;
-#else
-    using boost::log::empty_deleter;
-#endif
 
     // Create a backend and attach a stream to it
     boost::shared_ptr<sinks::text_ostream_backend> backend = boost::make_shared<sinks::text_ostream_backend>();
-    backend->add_stream(boost::shared_ptr<std::ostream>(&std::clog, empty_deleter()));
+    backend->add_stream(boost::shared_ptr<std::ostream>(&std::clog, boost::null_deleter()));
     // backend->add_stream( boost::shared_ptr< std::ostream >( new std::ofstream("sample.log") ) );
 
     // Enable auto-flushing after each log record written
