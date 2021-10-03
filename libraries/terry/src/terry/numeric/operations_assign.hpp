@@ -1,7 +1,6 @@
 #ifndef _TERRY_NUMERIC_OPERATIONS_ASSIGN_HPP_
 #define _TERRY_NUMERIC_OPERATIONS_ASSIGN_HPP_
 
-#include <boost/gil/gil_config.hpp>
 #include <boost/gil/channel.hpp>
 #include <boost/gil/pixel_iterator.hpp>
 

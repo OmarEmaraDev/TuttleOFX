@@ -3,7 +3,7 @@
 
 #include <terry/math/Rect.hpp>
 
-#include <boost/gil/gil_config.hpp>
+#include <boost/gil/channel.hpp>
 #include <boost/gil/algorithm.hpp>
 
 namespace terry

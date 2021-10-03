@@ -22,7 +22,7 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////
 
-#include <boost/gil/gil_config.hpp>
+#include <boost/gil/channel.hpp>
 #include <boost/gil/channel_algorithm.hpp>
 #include <boost/gil/algorithm.hpp>
 #include <boost/gil/pixel.hpp>

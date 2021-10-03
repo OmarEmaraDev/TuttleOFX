@@ -6,7 +6,7 @@
 #include <boost/mpl/contains.hpp>
 #include <boost/mpl/at.hpp>
 
-#include <boost/gil/gil_config.hpp>
+#include <boost/gil/channel.hpp>
 #include <boost/gil/gil_concept.hpp>
 #include <boost/gil/utilities.hpp>
 

@@ -1,7 +1,6 @@
 #ifndef _TERRY_NUMERIC_MINMAX_HPP_
 #define _TERRY_NUMERIC_MINMAX_HPP_
 
-#include <boost/gil/gil_config.hpp>
 #include <boost/gil/channel.hpp>
 
 #include <functional>

@@ -17,7 +17,7 @@
 /// \date   2005-2007 \n Last updated on September 26, 2006
 */
 
-#include <boost/gil/gil_config.hpp>
+#include <boost/gil/channel.hpp>
 #include <boost/gil/utilities.hpp>
 
 #include <boost/array.hpp>

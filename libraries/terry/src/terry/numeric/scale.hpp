@@ -5,7 +5,7 @@
 
 #include <terry/channel.hpp>
 
-#include <boost/gil/gil_config.hpp>
+#include <boost/gil/channel.hpp>
 #include <boost/gil/pixel.hpp>
 #include <boost/gil/color_base_algorithm.hpp>
 

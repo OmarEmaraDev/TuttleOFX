@@ -23,7 +23,6 @@
 ///
 ////////////////////////////////////////////////////////////////////////////////////////
 
-#include <boost/gil/gil_config.hpp>
 #include <boost/gil/channel.hpp>
 #include <boost/mpl/less.hpp>
 #include <boost/mpl/integral_c.hpp>

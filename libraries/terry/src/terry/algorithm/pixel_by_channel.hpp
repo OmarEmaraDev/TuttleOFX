@@ -1,7 +1,7 @@
 #ifndef _TERRY_ALGORITHM_PIXEL_BY_CHANNEL_HPP_
 #define _TERRY_ALGORITHM_PIXEL_BY_CHANNEL_HPP_
 
-#include <boost/gil/gil_config.hpp>
+#include <boost/gil/channel.hpp>
 #include <boost/gil/pixel.hpp>
 #include <boost/gil/color_base_algorithm.hpp>
 
