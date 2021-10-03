@@ -8,6 +8,5 @@ tuttle_ofx_plugin_add_library(OpenImageIO OpenImageIO)
 tuttle_ofx_plugin_add_library(OpenImageIO sequenceParser)
 
 # FIXME : as Terry needs to load half.h
-tuttle_ofx_plugin_add_library(OpenImageIO IlmBase) 
-tuttle_ofx_plugin_add_library(OpenImageIO OpenEXR) 
-
+tuttle_ofx_plugin_add_library(OpenImageIO Imath)
+tuttle_ofx_plugin_add_library(OpenImageIO OpenEXR)
