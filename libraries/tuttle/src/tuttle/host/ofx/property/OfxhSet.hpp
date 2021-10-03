@@ -318,7 +318,7 @@ public:
     OfxPropertySetHandle getHandle() const { return (OfxPropertySetHandle) this; }
 
     /// is this a nice property set, or a dodgy pointer passed back to us
-    bool verifyMagic() { return this != NULL && _magic == kMagic; }
+    bool verifyMagic() { return _magic == kMagic; }
 
 private:
     friend class boost::serialization::access;

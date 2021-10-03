@@ -60,7 +60,7 @@ private:
     const int _magic;                     ///< to check for handles being nice
 
 public:
-    bool verifyMagic() const { return this != NULL && _magic == kMagic; }
+    bool verifyMagic() const { return _magic == kMagic; }
 
     /// grab a handle on the parameter for passing to the C API
     OfxInteractHandle getHandle() { return (OfxInteractHandle) this; }
