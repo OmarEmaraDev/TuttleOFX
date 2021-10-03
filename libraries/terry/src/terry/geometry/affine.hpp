@@ -94,14 +94,14 @@ public:
 };
 
 template <typename T>
-GIL_FORCEINLINE matrix3x2<T> operator*(const matrix3x2<T>& m1, const matrix3x2<T>& m2)
+BOOST_FORCEINLINE matrix3x2<T> operator*(const matrix3x2<T>& m1, const matrix3x2<T>& m2)
 {
     return matrix3x2<T>(m1.a * m2.a + m1.b * m2.c, m1.a * m2.b + m1.b * m2.d, m1.c * m2.a + m1.d * m2.c,
                         m1.c * m2.b + m1.d * m2.d, m1.e * m2.a + m1.f * m2.c + m2.e, m1.e * m2.b + m1.f * m2.d + m2.f);
 }
 
 template <typename T, typename F>
-GIL_FORCEINLINE point2<F> operator*(const point2<T>& p, const matrix3x2<F>& m)
+BOOST_FORCEINLINE point2<F> operator*(const point2<T>& p, const matrix3x2<F>& m)
 {
     return point2<F>(m.a * p.x + m.c * p.y + m.e, m.b * p.x + m.d * p.y + m.f);
 }
@@ -129,7 +129,7 @@ struct mapping_traits<matrix3x2<F> >
 };
 
 template <typename F, typename F2>
-GIL_FORCEINLINE point2<F> transform(const matrix3x2<F>& mat, const point2<F2>& src)
+BOOST_FORCEINLINE point2<F> transform(const matrix3x2<F>& mat, const point2<F2>& src)
 {
     return src * mat;
 }

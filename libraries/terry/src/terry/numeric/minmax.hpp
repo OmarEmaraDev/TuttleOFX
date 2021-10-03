@@ -19,7 +19,7 @@ using namespace boost::gil;
 template <typename ChannelSrc, typename ChannelDst>
 struct channel_assign_min_t : public std::binary_function<ChannelSrc, ChannelDst, ChannelDst>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     typename channel_traits<ChannelDst>::reference operator()(typename channel_traits<ChannelSrc>::const_reference ch1,
                                                               typename channel_traits<ChannelDst>::reference ch2) const
     {
@@ -34,7 +34,7 @@ template <typename PixelSrc, // models pixel concept
 // models pixel value concept
 struct pixel_assign_min_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst& operator()(const PixelSrc& p1, PixelDst& p2) const
     {
         static_for_each(
@@ -49,7 +49,7 @@ struct pixel_assign_min_t
 template <typename ChannelSrc, typename ChannelDst>
 struct channel_assign_max_t : public std::binary_function<ChannelSrc, ChannelDst, ChannelDst>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     typename channel_traits<ChannelDst>::reference operator()(typename channel_traits<ChannelSrc>::const_reference ch1,
                                                               typename channel_traits<ChannelDst>::reference ch2) const
     {
@@ -64,7 +64,7 @@ template <typename PixelSrc, // models pixel concept
 // models pixel value concept
 struct pixel_assign_max_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst& operator()(const PixelSrc& p1, PixelDst& p2) const
     {
         static_for_each(
@@ -88,7 +88,7 @@ struct pixel_minmax_by_channel_t
     }
 
     template <typename Pixel>
-    GIL_FORCEINLINE void operator()(const Pixel& v)
+    BOOST_FORCEINLINE void operator()(const Pixel& v)
     {
         pixel_assign_min_t<Pixel, CPixel>()(v, min);
         pixel_assign_max_t<Pixel, CPixel>()(v, max);

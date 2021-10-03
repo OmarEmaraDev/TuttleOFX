@@ -21,7 +21,7 @@ namespace numeric
 template <typename Channel>
 struct channel_zeros_t : public std::unary_function<Channel, Channel>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     typename channel_traits<Channel>::reference operator()(typename channel_traits<Channel>::reference ch) const
     {
         return ch = Channel(0);
@@ -33,7 +33,7 @@ struct channel_zeros_t : public std::unary_function<Channel, Channel>
 template <typename PixelRef> // models pixel concept
 struct pixel_zeros_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelRef& operator()(PixelRef& p) const
     {
         static_for_each(p, channel_zeros_t<typename channel_type<PixelRef>::type>());
@@ -42,13 +42,13 @@ struct pixel_zeros_t
 };
 
 template <typename Pixel>
-GIL_FORCEINLINE Pixel& pixel_zeros(Pixel& p)
+BOOST_FORCEINLINE Pixel& pixel_zeros(Pixel& p)
 {
     return pixel_zeros_t<Pixel>()(p);
 }
 
 template <typename Pixel>
-GIL_FORCEINLINE Pixel pixel_zeros()
+BOOST_FORCEINLINE Pixel pixel_zeros()
 {
     Pixel p;
     return pixel_zeros_t<Pixel>()(p);
@@ -60,7 +60,7 @@ GIL_FORCEINLINE Pixel pixel_zeros()
 template <typename Channel>
 struct channel_ones_t : public std::unary_function<Channel, Channel>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     typename channel_traits<Channel>::reference operator()(typename channel_traits<Channel>::reference ch) const
     {
         return ch = Channel(1);
@@ -72,7 +72,7 @@ struct channel_ones_t : public std::unary_function<Channel, Channel>
 template <typename PixelRef> // models pixel concept
 struct pixel_ones_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelRef& operator()(PixelRef& p) const
     {
         static_for_each(p, channel_ones_t<typename channel_type<PixelRef>::type>());
@@ -81,13 +81,13 @@ struct pixel_ones_t
 };
 
 template <typename Pixel>
-GIL_FORCEINLINE Pixel& pixel_ones(Pixel& p)
+BOOST_FORCEINLINE Pixel& pixel_ones(Pixel& p)
 {
     return pixel_ones_t<Pixel>()(p);
 }
 
 template <typename Pixel>
-GIL_FORCEINLINE Pixel pixel_ones()
+BOOST_FORCEINLINE Pixel pixel_ones()
 {
     Pixel p;
     return pixel_ones_t<Pixel>()(p);

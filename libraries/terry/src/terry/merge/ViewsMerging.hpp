@@ -21,7 +21,7 @@ template <>
 struct merger<merge_per_pixel>
 {
     template <class Pixel, class Functor>
-    GIL_FORCEINLINE void operator()(const Pixel& A, const Pixel& B, Pixel& d, Functor& fun) const
+    BOOST_FORCEINLINE void operator()(const Pixel& A, const Pixel& B, Pixel& d, Functor& fun) const
     {
         fun(A, B, d);
     }
@@ -31,7 +31,7 @@ template <>
 struct merger<merge_per_channel_with_alpha>
 {
     template <class Pixel, class Functor>
-    GIL_FORCEINLINE void operator()(const Pixel& A, const Pixel& B, Pixel& d, Functor& fun) const
+    BOOST_FORCEINLINE void operator()(const Pixel& A, const Pixel& B, Pixel& d, Functor& fun) const
     {
         fun.a = alpha_or_max(A);
         fun.b = alpha_or_max(B);
@@ -43,7 +43,7 @@ template <>
 struct merger<merge_per_channel>
 {
     template <class Pixel, class Functor>
-    GIL_FORCEINLINE void operator()(const Pixel& A, const Pixel& B, Pixel& d, Functor& fun) const
+    BOOST_FORCEINLINE void operator()(const Pixel& A, const Pixel& B, Pixel& d, Functor& fun) const
     {
         static_for_each(A, B, d, fun);
     }

@@ -24,7 +24,7 @@ namespace floodFill
  * image).
  */
 template <class SIterator, class DIterator, class DPixel, class Test>
-GIL_FORCEINLINE void fill_pixels_range_if(SIterator srcBegin, const SIterator& srcEnd, DIterator dstBegin,
+BOOST_FORCEINLINE void fill_pixels_range_if(SIterator srcBegin, const SIterator& srcEnd, DIterator dstBegin,
                                           const DPixel& value, const Test& condition)
 {
     do
@@ -63,7 +63,7 @@ struct IsUpper
         : _threshold(threshold)
     {
     }
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     bool operator()(const T& p) const { return (p >= _threshold); }
 };
 
@@ -73,7 +73,7 @@ typedef enum
     eDirectionBellow = 1
 } EDirection;
 
-GIL_FORCEINLINE
+BOOST_FORCEINLINE
 EDirection invertDirection(const EDirection d)
 {
     return d == eDirectionAbove ? eDirectionBellow : eDirectionAbove;

@@ -12,7 +12,7 @@ namespace draw
 {
 
 template <class View>
-GIL_FORCEINLINE void fill_pixels(View& dstView, const typename View::value_type& pixelValue)
+BOOST_FORCEINLINE void fill_pixels(View& dstView, const typename View::value_type& pixelValue)
 {
     typedef typename View::value_type Pixel;
     boost::gil::fill_pixels(dstView, pixelValue);
@@ -26,7 +26,7 @@ GIL_FORCEINLINE void fill_pixels(View& dstView, const typename View::value_type&
  * @param[in] pixelValue Pixel value used to fill.
  */
 template <class View>
-GIL_FORCEINLINE void fill_pixels(View& dstView, const Rect<std::ssize_t>& window,
+BOOST_FORCEINLINE void fill_pixels(View& dstView, const Rect<std::ssize_t>& window,
                                  const typename View::value_type& pixelValue)
 {
     typedef typename View::value_type Pixel;
@@ -44,7 +44,7 @@ GIL_FORCEINLINE void fill_pixels(View& dstView, const Rect<std::ssize_t>& window
  * @param[in] pixelValue Pixel value used to fill.
  */
 template <class DIterator, class DPixel>
-GIL_FORCEINLINE void fill_pixels_range(DIterator dstBegin, const DIterator& dstEnd, const DPixel& pixelValue)
+BOOST_FORCEINLINE void fill_pixels_range(DIterator dstBegin, const DIterator& dstEnd, const DPixel& pixelValue)
 {
     do
     {

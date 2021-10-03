@@ -40,7 +40,7 @@ struct ConvertionParameters
 template <typename PixelSrc, typename PixelDst>
 struct notPremutliplied_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst operator()(const PixelSrc& src) const
     {
         PixelDst dst;
@@ -54,14 +54,14 @@ struct notPremutliplied_t
 template <typename PixelSrc, typename PixelDst>
 struct notPremutlipliedRGBA_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst operator()(const PixelSrc& src) const { return PixelDst(src); }
 };
 
 template <typename PixelSrc, typename PixelDst>
 struct premutliplied_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst operator()(const PixelSrc& src) const
     {
         PixelDst dst;
@@ -75,7 +75,7 @@ struct premutliplied_t
 template <typename PixelSrc, typename PixelDst>
 struct premutlipliedRGBA_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst operator()(const PixelSrc& src) const
     {
         PixelDst dst;
@@ -90,7 +90,7 @@ struct premutlipliedRGBA_t
 template <typename PixelSrc, typename PixelDst>
 struct grayMean_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst operator()(const PixelSrc& src) const
     {
         PixelDst dst;
@@ -103,7 +103,7 @@ struct grayMean_t
 template <typename PixelSrc, typename PixelDst>
 struct grayRec601_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst operator()(const PixelSrc& src) const
     {
         PixelDst dst;
@@ -117,7 +117,7 @@ struct grayRec601_t
 template <typename PixelSrc, typename PixelDst>
 struct grayRec709_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst operator()(const PixelSrc& src) const
     {
         PixelDst dst;
@@ -131,7 +131,7 @@ struct grayRec709_t
 template <typename PixelSrc, typename PixelDst>
 struct grayFromRed_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst operator()(const PixelSrc& src) const
     {
         PixelDst dst;
@@ -143,7 +143,7 @@ struct grayFromRed_t
 template <typename PixelSrc, typename PixelDst>
 struct grayFromGreen_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst operator()(const PixelSrc& src) const
     {
         PixelDst dst;
@@ -155,7 +155,7 @@ struct grayFromGreen_t
 template <typename PixelSrc, typename PixelDst>
 struct grayFromBlue_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst operator()(const PixelSrc& src) const
     {
         PixelDst dst;
@@ -167,7 +167,7 @@ struct grayFromBlue_t
 template <typename PixelSrc, typename PixelDst>
 struct grayFromAlpha_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     /*PixelDst operator()( const PixelSrc& src ) const
     {
             PixelDst dst ;
@@ -215,7 +215,7 @@ struct grayFromAlpha_t
 template <typename PixelSrc, typename PixelDst>
 struct rgbToRgba_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst operator()(const PixelSrc& src) const
     {
         PixelDst dst;
@@ -230,7 +230,7 @@ struct rgbToRgba_t
 template <typename PixelSrc, typename PixelDst>
 struct grayToRgb_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst operator()(const PixelSrc& src) const
     {
         PixelDst dst;
@@ -244,7 +244,7 @@ struct grayToRgb_t
 template <typename PixelSrc, typename PixelDst>
 struct grayToRgba_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst operator()(const PixelSrc& src) const
     {
         PixelDst dst;

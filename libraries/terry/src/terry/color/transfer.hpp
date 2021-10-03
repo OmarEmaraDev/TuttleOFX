@@ -120,7 +120,7 @@ struct pixel_rgb_to_lms_t
 
     static const MatrixContants _matrices;
 
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR operator()(const PixelRef& rgb) const
     {
         using namespace terry::numeric;
@@ -143,7 +143,7 @@ struct pixel_rgb_to_lab_t
 
     static const MatrixContants _matrices;
 
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR operator()(const PixelRef& rgb) const
     {
         using namespace terry::numeric;
@@ -175,7 +175,7 @@ struct pixel_lms_to_rgb_t
 
     static const MatrixContants _matrices;
 
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR operator()(const PixelRef& lms) const
     {
         using namespace terry::numeric;
@@ -198,7 +198,7 @@ struct pixel_lab_to_rgb_t
 
     static const MatrixContants _matrices;
 
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR operator()(const PixelRef& lab) const
     {
         using namespace terry::numeric;

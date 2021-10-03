@@ -47,7 +47,7 @@ struct FunctorFadeToColor
     {
     }
 
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     Pixel operator()(const Pixel& a) const
     {
         using namespace terry::numeric;

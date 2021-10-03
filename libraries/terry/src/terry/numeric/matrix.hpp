@@ -21,7 +21,7 @@ struct pixel_matrix33_multiply_t
     {
     }
 
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR operator()(const PixelRef& p) const
     {
         PixelR result;

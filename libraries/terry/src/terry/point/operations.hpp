@@ -5,13 +5,13 @@
 
 /// \ingroup PointModel
 template <typename T>
-GIL_FORCEINLINE boost::gil::point2<T> operator*(const boost::gil::point2<T>& p, const double t)
+BOOST_FORCEINLINE boost::gil::point2<T> operator*(const boost::gil::point2<T>& p, const double t)
 {
     return boost::gil::point2<T>(p.x * t, p.y * t);
 }
 /// \ingroup PointModel
 template <typename T>
-GIL_FORCEINLINE boost::gil::point2<T>& operator*=(boost::gil::point2<T>& p, const double t)
+BOOST_FORCEINLINE boost::gil::point2<T>& operator*=(boost::gil::point2<T>& p, const double t)
 {
     p.x *= t;
     p.y *= t;
@@ -19,13 +19,13 @@ GIL_FORCEINLINE boost::gil::point2<T>& operator*=(boost::gil::point2<T>& p, cons
 }
 /// \ingroup PointModel
 template <typename T>
-GIL_FORCEINLINE boost::gil::point2<T> operator*(const boost::gil::point2<T>& a, const boost::gil::point2<T>& b)
+BOOST_FORCEINLINE boost::gil::point2<T> operator*(const boost::gil::point2<T>& a, const boost::gil::point2<T>& b)
 {
     return boost::gil::point2<T>(a.x * b.x, a.y * b.y);
 }
 /// \ingroup PointModel
 template <typename T>
-GIL_FORCEINLINE boost::gil::point2<T>& operator*=(boost::gil::point2<T>& a, const boost::gil::point2<T>& b)
+BOOST_FORCEINLINE boost::gil::point2<T>& operator*=(boost::gil::point2<T>& a, const boost::gil::point2<T>& b)
 {
     a.x *= b.x;
     a.y *= b.y;
@@ -33,13 +33,13 @@ GIL_FORCEINLINE boost::gil::point2<T>& operator*=(boost::gil::point2<T>& a, cons
 }
 /// \ingroup PointModel
 template <typename T>
-GIL_FORCEINLINE boost::gil::point2<T> operator/(const boost::gil::point2<T>& a, const boost::gil::point2<T>& b)
+BOOST_FORCEINLINE boost::gil::point2<T> operator/(const boost::gil::point2<T>& a, const boost::gil::point2<T>& b)
 {
     return boost::gil::point2<T>(a.x / b.x, a.y / b.y);
 }
 /// \ingroup PointModel
 template <typename T>
-GIL_FORCEINLINE boost::gil::point2<double> operator/(const double t, const boost::gil::point2<T>& p)
+BOOST_FORCEINLINE boost::gil::point2<double> operator/(const double t, const boost::gil::point2<T>& p)
 {
     boost::gil::point2<double> res(0, 0);
     if(p.x != 0)

@@ -13,7 +13,7 @@ namespace numeric
 template <typename Channel, typename ChannelR>
 struct channel_log10_t : public std::unary_function<Channel, ChannelR>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     ChannelR operator()(typename channel_traits<Channel>::const_reference ch) const
     {
         typedef typename floating_channel_type_t<ChannelR>::type T;
@@ -24,7 +24,7 @@ struct channel_log10_t : public std::unary_function<Channel, ChannelR>
 template <typename PixelRef, typename PixelR = PixelRef> // models pixel concept
 struct pixel_log10_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR operator()(const PixelRef& p) const
     {
         PixelR result;

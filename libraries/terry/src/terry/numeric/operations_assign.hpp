@@ -20,7 +20,7 @@ namespace numeric
 template <typename ChannelSrc, typename ChannelDst>
 struct channel_plus_assign_t : public std::binary_function<ChannelSrc, ChannelDst, ChannelDst>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     typename channel_traits<ChannelDst>::reference operator()(typename channel_traits<ChannelSrc>::const_reference ch1,
                                                               typename channel_traits<ChannelDst>::reference ch2) const
     {
@@ -34,7 +34,7 @@ template <typename PixelSrc,            // models pixel concept
           typename PixelDst = PixelSrc> // models pixel concept
 struct pixel_plus_assign_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst& operator()(const PixelSrc& p1, PixelDst& p2) const
     {
         static_for_each(
@@ -50,7 +50,7 @@ struct pixel_plus_assign_t
 template <typename ChannelSrc, typename ChannelDst>
 struct channel_minus_assign_t : public std::binary_function<ChannelSrc, ChannelDst, ChannelDst>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     typename channel_traits<ChannelDst>::reference operator()(typename channel_traits<ChannelSrc>::const_reference ch1,
                                                               typename channel_traits<ChannelDst>::reference ch2) const
     {
@@ -64,7 +64,7 @@ template <typename PixelSrc,            // models pixel concept
           typename PixelDst = PixelSrc> // models pixel concept
 struct pixel_minus_assign_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst& operator()(const PixelSrc& p1, PixelDst& p2) const
     {
         static_for_each(
@@ -80,7 +80,7 @@ struct pixel_minus_assign_t
 template <typename ChannelSrc, typename ChannelDst>
 struct channel_multiplies_assign_t : public std::binary_function<ChannelSrc, ChannelDst, ChannelDst>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     typename channel_traits<ChannelDst>::reference operator()(typename channel_traits<ChannelSrc>::const_reference ch1,
                                                               typename channel_traits<ChannelDst>::reference ch2) const
     {
@@ -95,7 +95,7 @@ struct channel_multiplies_assign_t : public std::binary_function<ChannelSrc, Cha
 template <typename ChannelSrc, typename ChannelDst>
 struct channel_divides_assign_t : public std::binary_function<ChannelSrc, ChannelDst, ChannelDst>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     typename channel_traits<ChannelDst>::reference operator()(typename channel_traits<ChannelSrc>::const_reference ch1,
                                                               typename channel_traits<ChannelDst>::reference ch2) const
     {
@@ -110,7 +110,7 @@ struct channel_divides_assign_t : public std::binary_function<ChannelSrc, Channe
 template <typename Scalar, typename ChannelDst>
 struct channel_plus_scalar_assign_t : public std::binary_function<Scalar, ChannelDst, ChannelDst>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     typename channel_traits<ChannelDst>::reference operator()(const Scalar s,
                                                               typename channel_traits<ChannelDst>::reference ch) const
     {
@@ -125,7 +125,7 @@ struct channel_plus_scalar_assign_t : public std::binary_function<Scalar, Channe
 template <typename Scalar, typename ChannelDst>
 struct channel_minus_scalar_assign_t : public std::binary_function<Scalar, ChannelDst, ChannelDst>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     typename channel_traits<ChannelDst>::reference operator()(const Scalar s,
                                                               typename channel_traits<ChannelDst>::reference ch) const
     {
@@ -140,7 +140,7 @@ struct channel_minus_scalar_assign_t : public std::binary_function<Scalar, Chann
 template <typename Scalar, typename ChannelDst>
 struct channel_multiplies_scalar_assign_t : public std::binary_function<Scalar, ChannelDst, ChannelDst>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     typename channel_traits<ChannelDst>::reference operator()(const Scalar s,
                                                               typename channel_traits<ChannelDst>::reference ch) const
     {
@@ -154,7 +154,7 @@ template <typename Scalar,   // models a scalar type
           typename PixelDst> // models pixel concept
 struct pixel_multiplies_scalar_assign_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst& operator()(const Scalar s, PixelDst& p) const
     {
         static_for_each(
@@ -170,7 +170,7 @@ struct pixel_multiplies_scalar_assign_t
 template <typename Scalar, typename ChannelDst>
 struct channel_divides_scalar_assign_t : public std::binary_function<Scalar, ChannelDst, ChannelDst>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     typename channel_traits<ChannelDst>::reference operator()(const Scalar s,
                                                               typename channel_traits<ChannelDst>::reference ch) const
     {
@@ -184,7 +184,7 @@ template <typename Scalar,   // models a scalar type
           typename PixelDst> // models pixel concept
 struct pixel_divides_scalar_assign_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelDst& operator()(const Scalar s, PixelDst& p) const
     {
         static_for_each(p,

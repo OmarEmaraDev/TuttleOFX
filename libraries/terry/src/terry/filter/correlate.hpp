@@ -15,7 +15,7 @@ namespace filter
 
 /// @brief 1D un-guarded correlation with a variable-size kernel
 template <typename PixelAccum, typename SrcIterator, typename KernelIterator, typename Integer, typename DstIterator>
-GIL_FORCEINLINE DstIterator correlate_pixels_n(SrcIterator src_begin, SrcIterator src_end, KernelIterator ker_begin,
+BOOST_FORCEINLINE DstIterator correlate_pixels_n(SrcIterator src_begin, SrcIterator src_end, KernelIterator ker_begin,
                                                Integer ker_size, DstIterator dst_begin)
 {
     using namespace terry::numeric;
@@ -41,7 +41,7 @@ GIL_FORCEINLINE DstIterator correlate_pixels_n(SrcIterator src_begin, SrcIterato
 
 /// @brief 1D un-guarded correlation with a fixed-size kernel
 template <std::size_t Size, typename PixelAccum, typename SrcIterator, typename KernelIterator, typename DstIterator>
-GIL_FORCEINLINE DstIterator correlate_pixels_k(SrcIterator src_begin, SrcIterator src_end, KernelIterator ker_begin,
+BOOST_FORCEINLINE DstIterator correlate_pixels_k(SrcIterator src_begin, SrcIterator src_end, KernelIterator ker_begin,
                                                DstIterator dst_begin)
 {
     using namespace terry::numeric;

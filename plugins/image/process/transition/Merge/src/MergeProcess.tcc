@@ -83,7 +83,7 @@ void MergeProcess<View, Functor>::setup(const OFX::RenderArguments& args)
 }
 
 template <typename View, typename Value>
-GIL_FORCEINLINE void fill_pixels(const View& dstView, const Value& val, const OfxRectI& region)
+BOOST_FORCEINLINE void fill_pixels(const View& dstView, const Value& val, const OfxRectI& region)
 {
     View dst = subimage_view(dstView, region.x1, region.y1, region.x2 - region.x1, region.y2 - region.y1);
 
@@ -91,7 +91,7 @@ GIL_FORCEINLINE void fill_pixels(const View& dstView, const Value& val, const Of
 }
 
 template <typename View>
-GIL_FORCEINLINE void copy_pixels(const View& src, const OfxRectI& srcRegion, const View& dst, const OfxRectI& dstRegion)
+BOOST_FORCEINLINE void copy_pixels(const View& src, const OfxRectI& srcRegion, const View& dst, const OfxRectI& dstRegion)
 {
     const OfxPointI regionSize = {srcRegion.x2 - srcRegion.x1, srcRegion.y2 - srcRegion.y1};
     BOOST_ASSERT(regionSize.x == (dstRegion.x2 - dstRegion.x1));

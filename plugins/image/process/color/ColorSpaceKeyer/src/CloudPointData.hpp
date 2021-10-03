@@ -30,7 +30,7 @@ template <typename PixelRef1, // models pixel concept
           typename PixelRef2> // models pixel concept
 struct pixel_is_lesser_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     bool operator()(const PixelRef1& p1, const PixelRef2& p2) const
     {
         for(int v = 0; v < 3 /*boost::gil::num_channels<Pixel>::type::value*/; ++v)

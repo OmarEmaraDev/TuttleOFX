@@ -26,7 +26,7 @@ namespace algorithm
 /// \ingroup ImageViewSTLAlgorithmsTransformPixels
 /// \brief std::transform for image views
 template <typename View, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_progress(const View& dst, F& fun, Progress& p)
+BOOST_FORCEINLINE F transform_pixels_progress(const View& dst, F& fun, Progress& p)
 {
     for(std::ptrdiff_t y = 0; y < dst.height(); ++y)
     {
@@ -39,7 +39,7 @@ GIL_FORCEINLINE F transform_pixels_progress(const View& dst, F& fun, Progress& p
     return fun;
 }
 template <typename View, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_progress(const View& dst, const F& fun, Progress& p)
+BOOST_FORCEINLINE F transform_pixels_progress(const View& dst, const F& fun, Progress& p)
 {
     for(std::ptrdiff_t y = 0; y < dst.height(); ++y)
     {
@@ -55,7 +55,7 @@ GIL_FORCEINLINE F transform_pixels_progress(const View& dst, const F& fun, Progr
 /// \ingroup ImageViewSTLAlgorithmsTransformPixels
 /// \brief std::transform for image views
 template <typename View1, typename View2, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_progress(const View1& src, const View2& dst, F& fun, Progress& p)
+BOOST_FORCEINLINE F transform_pixels_progress(const View1& src, const View2& dst, F& fun, Progress& p)
 {
     assert(src.dimensions() == dst.dimensions());
     for(std::ptrdiff_t y = 0; y < src.height(); ++y)
@@ -71,7 +71,7 @@ GIL_FORCEINLINE F transform_pixels_progress(const View1& src, const View2& dst, 
 }
 
 template <typename View1, typename View2, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_progress(const View1& src, const View2& dst, const F& fun, Progress& p)
+BOOST_FORCEINLINE F transform_pixels_progress(const View1& src, const View2& dst, const F& fun, Progress& p)
 {
     assert(src.dimensions() == dst.dimensions());
     for(std::ptrdiff_t y = 0; y < src.height(); ++y)
@@ -89,7 +89,7 @@ GIL_FORCEINLINE F transform_pixels_progress(const View1& src, const View2& dst, 
 /// \ingroup ImageViewSTLAlgorithmsTransformPixels
 /// \brief transform_pixels with two sources
 template <typename View1, typename View2, typename View3, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_progress(const View1& src1, const View2& src2, const View3& dst, F& fun, Progress& p)
+BOOST_FORCEINLINE F transform_pixels_progress(const View1& src1, const View2& src2, const View3& dst, F& fun, Progress& p)
 {
     assert(src1.dimensions() == dst.dimensions());
     assert(src2.dimensions() == dst.dimensions());
@@ -107,7 +107,7 @@ GIL_FORCEINLINE F transform_pixels_progress(const View1& src1, const View2& src2
 }
 
 template <typename View1, typename View2, typename View3, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_progress(const View1& src1, const View2& src2, const View3& dst, const F& fun,
+BOOST_FORCEINLINE F transform_pixels_progress(const View1& src1, const View2& src2, const View3& dst, const F& fun,
                                             Progress& p)
 {
     assert(src1.dimensions() == dst.dimensions());
@@ -128,7 +128,7 @@ GIL_FORCEINLINE F transform_pixels_progress(const View1& src1, const View2& src2
 /// \ingroup ImageViewSTLAlgorithmsTransformPixels
 /// \brief transform_pixels with two sources
 template <typename View1, typename View2, typename View3, typename View4, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_progress(const View1& src1, const View2& src2, const View3& src3, const View4& dst,
+BOOST_FORCEINLINE F transform_pixels_progress(const View1& src1, const View2& src2, const View3& src3, const View4& dst,
                                             F& fun, Progress& p)
 {
     assert(src1.dimensions() == dst.dimensions());
@@ -149,7 +149,7 @@ GIL_FORCEINLINE F transform_pixels_progress(const View1& src1, const View2& src2
 }
 
 template <typename View1, typename View2, typename View3, typename View4, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_progress(const View1& src1, const View2& src2, const View3& src3, const View4& dst,
+BOOST_FORCEINLINE F transform_pixels_progress(const View1& src1, const View2& src2, const View3& src3, const View4& dst,
                                             const F& fun, Progress& p)
 {
     assert(src1.dimensions() == dst.dimensions());
@@ -184,7 +184,7 @@ GIL_FORCEINLINE F transform_pixels_progress(const View1& src1, const View2& src2
 /// \ingroup ImageViewSTLAlgorithmsTransformPixels
 /// \brief std::transform for image views
 template <typename View, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_locator_progress(const View& dst, const Rect<std::ssize_t>& dstRod,
+BOOST_FORCEINLINE F transform_pixels_locator_progress(const View& dst, const Rect<std::ssize_t>& dstRod,
                                                     const Rect<std::ssize_t>& renderWin, F& fun, Progress& p)
 {
     const std::ptrdiff_t renderWidth = renderWin.x2 - renderWin.x1;
@@ -206,7 +206,7 @@ GIL_FORCEINLINE F transform_pixels_locator_progress(const View& dst, const Rect<
 /// \ingroup ImageViewSTLAlgorithmsTransformPixels
 /// \brief std::transform for image views
 template <typename View, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_locator_progress(const View& dst, const Rect<std::ssize_t>& dstRod,
+BOOST_FORCEINLINE F transform_pixels_locator_progress(const View& dst, const Rect<std::ssize_t>& dstRod,
                                                     const Rect<std::ssize_t>& renderWin, const F& fun, Progress& p)
 {
     const std::ptrdiff_t renderWidth = renderWin.x2 - renderWin.x1;
@@ -230,7 +230,7 @@ GIL_FORCEINLINE F transform_pixels_locator_progress(const View& dst, const Rect<
 /// \ingroup ImageViewSTLAlgorithmsTransformPixels
 /// \brief std::transform for image views
 template <typename View, typename ViewDst, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_locator_progress(const View& src, const Rect<std::ssize_t>& srcRod, const ViewDst& dst,
+BOOST_FORCEINLINE F transform_pixels_locator_progress(const View& src, const Rect<std::ssize_t>& srcRod, const ViewDst& dst,
                                                     const Rect<std::ssize_t>& dstRod, const Rect<std::ssize_t>& renderWin,
                                                     F& fun, Progress& p)
 {
@@ -254,7 +254,7 @@ GIL_FORCEINLINE F transform_pixels_locator_progress(const View& src, const Rect<
 /// \ingroup ImageViewSTLAlgorithmsTransformPixels
 /// \brief std::transform for image views
 template <typename View, typename ViewDst, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_locator_progress(const View& src, const Rect<std::ssize_t>& srcRod, const ViewDst& dst,
+BOOST_FORCEINLINE F transform_pixels_locator_progress(const View& src, const Rect<std::ssize_t>& srcRod, const ViewDst& dst,
                                                     const Rect<std::ssize_t>& dstRod, const Rect<std::ssize_t>& renderWin,
                                                     const F& fun, Progress& p)
 {
@@ -280,7 +280,7 @@ GIL_FORCEINLINE F transform_pixels_locator_progress(const View& src, const Rect<
 /// \ingroup ImageViewSTLAlgorithmsTransformPixels
 /// \brief std::transform for image views
 template <typename View1, typename View2, typename ViewDst, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_locator_progress(const View1& src1, const Rect<std::ssize_t>& src1Rod, const View2& src2,
+BOOST_FORCEINLINE F transform_pixels_locator_progress(const View1& src1, const Rect<std::ssize_t>& src1Rod, const View2& src2,
                                                     const Rect<std::ssize_t>& src2Rod, const ViewDst& dst,
                                                     const Rect<std::ssize_t>& dstRod, const Rect<std::ssize_t>& renderWin,
                                                     F& fun, Progress& p)
@@ -308,7 +308,7 @@ GIL_FORCEINLINE F transform_pixels_locator_progress(const View1& src1, const Rec
 /// \ingroup ImageViewSTLAlgorithmsTransformPixels
 /// \brief std::transform for image views
 template <typename View1, typename View2, typename ViewDst, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_locator_progress(const View1& src1, const Rect<std::ssize_t>& src1Rod, const View2& src2,
+BOOST_FORCEINLINE F transform_pixels_locator_progress(const View1& src1, const Rect<std::ssize_t>& src1Rod, const View2& src2,
                                                     const Rect<std::ssize_t>& src2Rod, const ViewDst& dst,
                                                     const Rect<std::ssize_t>& dstRod, const Rect<std::ssize_t>& renderWin,
                                                     const F& fun, Progress& p)
@@ -338,7 +338,7 @@ GIL_FORCEINLINE F transform_pixels_locator_progress(const View1& src1, const Rec
 /// \ingroup ImageViewSTLAlgorithmsTransformPixels
 /// \brief std::transform for image views
 template <typename View1, typename View2, typename View3, typename ViewDst, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_locator_progress(const View1& src1, const Rect<std::ssize_t>& src1Rod, const View2& src2,
+BOOST_FORCEINLINE F transform_pixels_locator_progress(const View1& src1, const Rect<std::ssize_t>& src1Rod, const View2& src2,
                                                     const Rect<std::ssize_t>& src2Rod, const View2& src3,
                                                     const Rect<std::ssize_t>& src3Rod, const ViewDst& dst,
                                                     const Rect<std::ssize_t>& dstRod, const Rect<std::ssize_t>& renderWin,
@@ -370,7 +370,7 @@ GIL_FORCEINLINE F transform_pixels_locator_progress(const View1& src1, const Rec
 /// \ingroup ImageViewSTLAlgorithmsTransformPixels
 /// \brief std::transform for image views
 template <typename View1, typename View2, typename View3, typename ViewDst, typename F, typename Progress>
-GIL_FORCEINLINE F transform_pixels_locator_progress(const View1& src1, const Rect<std::ssize_t>& src1Rod, const View2& src2,
+BOOST_FORCEINLINE F transform_pixels_locator_progress(const View1& src1, const Rect<std::ssize_t>& src1Rod, const View2& src2,
                                                     const Rect<std::ssize_t>& src2Rod, const View2& src3,
                                                     const Rect<std::ssize_t>& src3Rod, const ViewDst& dst,
                                                     const Rect<std::ssize_t>& dstRod, const Rect<std::ssize_t>& renderWin,

@@ -16,7 +16,7 @@ namespace color
 template <typename Channel>
 struct channel_gradientDirection_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     void operator()(const Channel& x, const Channel& y, Channel& res) const { res = std::atan2((double)y, (double)x); }
 };
 
@@ -26,7 +26,7 @@ struct channel_gradientDirection_t
 template <typename Channel>
 struct channel_gradientDirectionAbs_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     void operator()(const Channel& x, const Channel& y, Channel& res) const
     {
         channel_gradientDirection_t<Channel>()(x, y, res);

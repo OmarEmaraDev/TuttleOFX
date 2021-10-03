@@ -39,7 +39,7 @@ struct pixel_merge_t
     {
     }
 
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     Pixel operator()(const Pixel& srcA, const Pixel& srcB) const
     {
         using namespace boost::gil;

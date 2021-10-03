@@ -14,7 +14,7 @@ namespace color
 template <typename Channel>
 struct channel_norm_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     void operator()(const Channel& a, const Channel& b, Channel& res) const
     {
         res = std::sqrt(boost::math::pow<2>(a) + boost::math::pow<2>(b));
@@ -27,7 +27,7 @@ struct channel_norm_t
 template <typename Channel>
 struct channel_normManhattan_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     void operator()(const Channel& a, const Channel& b, Channel& res) const { res = std::abs(a) + std::abs(b); }
 };
 }

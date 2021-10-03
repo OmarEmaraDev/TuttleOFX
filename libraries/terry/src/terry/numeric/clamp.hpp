@@ -18,7 +18,7 @@ struct channel_clamp_lower_than_t : public std::unary_function<Channel, Channel>
     {
     }
 
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     Channel operator()(typename channel_traits<Channel>::const_reference ch) const
     {
         if(ch < _threshold)
@@ -40,7 +40,7 @@ struct pixel_clamp_lower_than_t
     {
     }
 
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     Pixel operator()(const Pixel& p) const
     {
         Pixel result;

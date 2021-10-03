@@ -45,7 +45,7 @@ struct pixel_scale_t
         BOOST_STATIC_ASSERT(boost::is_floating_point<ChannelBaseType>::value);
     }
 
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     Pixel operator()(const Pixel& src) const
     {
         Pixel res;

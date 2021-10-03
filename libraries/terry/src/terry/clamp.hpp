@@ -20,7 +20,7 @@ struct channel_clamp
     {
     }
 
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     void operator()(const Channel& src, Channel& dst) const { dst = std::min(_max, std::max(_min, ChannelBaseType(src))); }
 };
 
@@ -44,7 +44,7 @@ struct clamp_converter
     {
     }
 
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     void operator()(const Pixel& src, Pixel& dst) const
     {
         using namespace boost::gil;

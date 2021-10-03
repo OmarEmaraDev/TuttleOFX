@@ -21,7 +21,7 @@ namespace numeric
 template <typename Channel1, typename Channel2, typename ChannelR>
 struct channel_plus_t : public std::binary_function<Channel1, Channel2, ChannelR>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     ChannelR operator()(typename channel_traits<Channel1>::const_reference ch1,
                         typename channel_traits<Channel2>::const_reference ch2) const
     {
@@ -36,7 +36,7 @@ template <typename PixelRef1, // models pixel concept
           typename PixelR>    // models pixel value concept
 struct pixel_plus_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR operator()(const PixelRef1& p1, const PixelRef2& p2) const
     {
         PixelR result;
@@ -53,7 +53,7 @@ struct pixel_plus_t
 template <typename Channel1, typename Channel2, typename ChannelR>
 struct channel_minus_t : public std::binary_function<Channel1, Channel2, ChannelR>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     ChannelR operator()(typename channel_traits<Channel1>::const_reference ch1,
                         typename channel_traits<Channel2>::const_reference ch2) const
     {
@@ -68,7 +68,7 @@ template <typename PixelRef1, // models pixel concept
           typename PixelR>    // models pixel value concept
 struct pixel_minus_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR operator()(const PixelRef1& p1, const PixelRef2& p2) const
     {
         PixelR result;
@@ -85,7 +85,7 @@ struct pixel_minus_t
 template <typename Channel1, typename Channel2, typename ChannelR>
 struct channel_multiplies_t : public std::binary_function<Channel1, Channel2, ChannelR>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     ChannelR operator()(typename channel_traits<Channel1>::const_reference ch1,
                         typename channel_traits<Channel2>::const_reference ch2) const
     {
@@ -100,7 +100,7 @@ template <typename PixelRef1, // models pixel concept
           typename PixelR>    // models pixel value concept
 struct pixel_multiplies_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR operator()(const PixelRef1& p1, const PixelRef2& p2) const
     {
         PixelR result;
@@ -117,7 +117,7 @@ struct pixel_multiplies_t
 template <typename Channel1, typename Channel2, typename ChannelR>
 struct channel_divides_t : public std::binary_function<Channel1, Channel2, ChannelR>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     ChannelR operator()(typename channel_traits<Channel1>::const_reference ch1,
                         typename channel_traits<Channel2>::const_reference ch2) const
     {
@@ -134,7 +134,7 @@ template <typename PixelRef1, // models pixel concept
           typename PixelR>    // models pixel value concept
 struct pixel_divides_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR operator()(const PixelRef1& p1, const PixelRef2& p2) const
     {
         PixelR result;
@@ -151,7 +151,7 @@ struct pixel_divides_t
 template <typename Channel, typename Scalar, typename ChannelR>
 struct channel_plus_scalar_t : public std::binary_function<Channel, Scalar, ChannelR>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     ChannelR operator()(typename channel_traits<Channel>::const_reference ch, const Scalar& s) const
     {
         return ChannelR(ch) + ChannelR(s);
@@ -164,7 +164,7 @@ struct channel_plus_scalar_t : public std::binary_function<Channel, Scalar, Chan
 template <typename Channel, typename Scalar, typename ChannelR>
 struct channel_minus_scalar_t : public std::binary_function<Channel, Scalar, ChannelR>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     ChannelR operator()(typename channel_traits<Channel>::const_reference ch, const Scalar& s) const
     {
         return ChannelR(ch - s);
@@ -177,7 +177,7 @@ struct channel_minus_scalar_t : public std::binary_function<Channel, Scalar, Cha
 template <typename Channel, typename Scalar, typename ChannelR>
 struct channel_multiplies_scalar_t : public std::binary_function<Channel, Scalar, ChannelR>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     ChannelR operator()(typename channel_traits<Channel>::const_reference ch, const Scalar& s) const
     {
         return ChannelR(ch) * ChannelR(s);
@@ -191,7 +191,7 @@ template <typename PixelRef,          // models pixel concept
           typename PixelR = PixelRef> // models pixel value concept
 struct pixel_multiplies_scalar_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR operator()(const PixelRef& p, const Scalar& s) const
     {
         PixelR result;
@@ -208,7 +208,7 @@ struct pixel_multiplies_scalar_t
 template <typename Channel, typename Scalar, typename ChannelR>
 struct channel_divides_scalar_t : public std::binary_function<Channel, Scalar, ChannelR>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     ChannelR operator()(typename channel_traits<Channel>::const_reference ch, const Scalar& s) const
     {
         return ChannelR(ch) / ChannelR(s);
@@ -222,7 +222,7 @@ template <typename PixelRef,          // models pixel concept
           typename PixelR = PixelRef> // models pixel value concept
 struct pixel_divides_scalar_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR operator()(const PixelRef& p, const Scalar& s) const
     {
         PixelR result;
@@ -239,7 +239,7 @@ struct pixel_divides_scalar_t
 template <typename Channel>
 struct channel_halves_t : public std::unary_function<Channel, Channel>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     typename channel_traits<Channel>::reference operator()(typename channel_traits<Channel>::reference ch) const
     {
         return ch /= 2.0;
@@ -251,7 +251,7 @@ struct channel_halves_t : public std::unary_function<Channel, Channel>
 template <typename PixelRef> // models pixel concept
 struct pixel_halves_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelRef& operator()(PixelRef& p) const
     {
         static_for_each(p, channel_halves_t<typename channel_type<PixelRef>::type>());
@@ -260,7 +260,7 @@ struct pixel_halves_t
 };
 
 template <typename Pixel>
-GIL_FORCEINLINE void pixel_halves(Pixel& p)
+BOOST_FORCEINLINE void pixel_halves(Pixel& p)
 {
     pixel_halves_t<Pixel>()(p);
 }

@@ -22,7 +22,7 @@ namespace numeric
 template <typename Channel, int n, typename ChannelR>
 struct channel_pow_t : public std::unary_function<Channel, ChannelR>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     ChannelR operator()(typename channel_traits<Channel>::const_reference ch) const
     {
         return boost::math::pow<n>(ChannelR(ch));
@@ -34,7 +34,7 @@ struct channel_pow_t : public std::unary_function<Channel, ChannelR>
 template <typename PixelRef, int n, typename PixelR = PixelRef> // models pixel concept
 struct pixel_pow_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR operator()(const PixelRef& p) const
     {
         PixelR result;
@@ -50,7 +50,7 @@ struct pixel_pow_t
 template <typename Channel, typename Scalar, typename ChannelR>
 struct channel_scalar_pow_t : public std::binary_function<Channel, Scalar, ChannelR>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     ChannelR operator()(typename channel_traits<Channel>::const_reference ch, const Scalar& s) const
     {
         typedef typename floating_channel_type_t<ChannelR>::type ChannelRFloat;
@@ -65,7 +65,7 @@ template <typename PixelRef,          // models pixel concept
           typename PixelR = PixelRef> // models pixel value concept
 struct pixel_scalar_pow_t
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR operator()(const PixelRef& p, const Scalar& s) const
     {
         PixelR result;

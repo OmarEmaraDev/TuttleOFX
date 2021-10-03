@@ -79,7 +79,7 @@ CacaImage load_cacaimage_from_view<boost::gil::gray8_view_t>(const boost::gil::g
 template <typename Channel>
 struct channel_cout_t : public std::unary_function<Channel, Channel>
 {
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     Channel operator()(typename boost::gil::channel_traits<Channel>::const_reference ch) const
     {
         std::cout << ch << " ";
@@ -91,7 +91,7 @@ template <template <class> class Func>
 struct call_pixel_by_channel_t
 {
     template <typename Pixel>
-    GIL_FORCEINLINE Pixel operator()(const Pixel& v) const
+    BOOST_FORCEINLINE Pixel operator()(const Pixel& v) const
     {
         static_for_each(v, Func<typename boost::gil::channel_type<Pixel>::type>());
         return v;

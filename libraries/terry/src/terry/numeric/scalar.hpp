@@ -10,7 +10,7 @@ namespace numeric
 
 /// @brief destination is set to be product of the source and a scalar
 template <typename PixelAccum, typename SrcView, typename Scalar, typename DstView>
-GIL_FORCEINLINE void view_multiplies_scalar(const SrcView& src, const Scalar& scalar, const DstView& dst)
+BOOST_FORCEINLINE void view_multiplies_scalar(const SrcView& src, const Scalar& scalar, const DstView& dst)
 {
     assert(src.dimensions() == dst.dimensions());
 

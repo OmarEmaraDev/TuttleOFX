@@ -89,7 +89,7 @@ struct resample_pixels_fn : public binary_operation_obj<resample_pixels_fn<Sampl
     }
 
     template <typename SrcView, typename DstView>
-    GIL_FORCEINLINE void apply_compatible(const SrcView& src, const DstView& dst) const
+    BOOST_FORCEINLINE void apply_compatible(const SrcView& src, const DstView& dst) const
     {
         resample_pixels(src, dst, _dst_to_src, _sampler);
     }

@@ -39,7 +39,7 @@ void ColorGradationProcess<View>::setup(const OFX::RenderArguments& args)
 
 template <class View>
 template <class TIN, class TOUT>
-GIL_FORCEINLINE void ColorGradationProcess<View>::processSwitchAlpha(const bool processAlpha, const View& src,
+BOOST_FORCEINLINE void ColorGradationProcess<View>::processSwitchAlpha(const bool processAlpha, const View& src,
                                                                      const View& dst, TIN gradationIn, TOUT gradationOut)
 {
     using namespace boost::gil;
@@ -61,7 +61,7 @@ GIL_FORCEINLINE void ColorGradationProcess<View>::processSwitchAlpha(const bool 
 
 template <class View>
 template <class TIN>
-GIL_FORCEINLINE void ColorGradationProcess<View>::processSwitchOut(const EParamGradation out, const bool processAlpha,
+BOOST_FORCEINLINE void ColorGradationProcess<View>::processSwitchOut(const EParamGradation out, const bool processAlpha,
                                                                    const View& src, const View& dst, TIN gradationIn)
 {
     using namespace boost::gil;

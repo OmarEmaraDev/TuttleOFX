@@ -23,7 +23,7 @@ template <typename PixelR> // models pixel concept
 struct pixel_assigns_min_t
 {
     typedef typename boost::gil::channel_type<PixelR>::type Channel;
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR& operator()(PixelR& dst) const
     {
         pixel_assigns_scalar_t<Channel, PixelR>()(channel_traits<Channel>::min_value(), dst);
@@ -32,7 +32,7 @@ struct pixel_assigns_min_t
 };
 
 template <typename Pixel>
-GIL_FORCEINLINE void pixel_assigns_min(Pixel& p)
+BOOST_FORCEINLINE void pixel_assigns_min(Pixel& p)
 {
     pixel_assigns_min_t<Pixel>()(p);
 }
@@ -43,7 +43,7 @@ template <typename PixelR> // models pixel concept
 struct pixel_assigns_max_t
 {
     typedef typename boost::gil::channel_type<PixelR>::type Channel;
-    GIL_FORCEINLINE
+    BOOST_FORCEINLINE
     PixelR& operator()(PixelR& dst) const
     {
         pixel_assigns_scalar_t<Channel, PixelR>()(channel_traits<Channel>::max_value(), dst);
@@ -52,7 +52,7 @@ struct pixel_assigns_max_t
 };
 
 template <typename Pixel>
-GIL_FORCEINLINE void pixel_assigns_max(Pixel& p)
+BOOST_FORCEINLINE void pixel_assigns_max(Pixel& p)
 {
     pixel_assigns_max_t<Pixel>()(p);
 }
