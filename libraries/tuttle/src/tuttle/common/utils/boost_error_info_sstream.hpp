@@ -51,6 +51,10 @@ public:
 
     ~error_info() throw() {}
 
+    exception_detail::error_info_base *clone() const {
+      return new This(*this);
+    }
+
     template <typename V>
     This& operator+(const V& v)
     {
