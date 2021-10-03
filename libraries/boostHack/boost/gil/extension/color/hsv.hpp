@@ -47,7 +47,7 @@ typedef mpl::vector3<hsv_color_space::hue_t, hsv_color_space::saturation_t, hsv_
 /// \ingroup LayoutModel
 typedef layout<hsv_t> hsv_layout_t;
 
-GIL_DEFINE_ALL_TYPEDEFS(32f, hsv);
+BOOST_GIL_DEFINE_ALL_TYPEDEFS(32f, float32_t, hsv);
 
 /// \ingroup ColorConvert
 /// \brief RGB to HSV

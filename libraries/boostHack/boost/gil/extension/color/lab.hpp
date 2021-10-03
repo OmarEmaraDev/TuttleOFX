@@ -48,7 +48,7 @@ typedef mpl::vector3<lab_color_space::luminance_t, lab_color_space::a_color_oppo
 /// \ingroup LayoutModel
 typedef layout<lab_t> lab_layout_t;
 
-GIL_DEFINE_ALL_TYPEDEFS(32f, lab);
+BOOST_GIL_DEFINE_ALL_TYPEDEFS(32f, float32_t, lab);
 
 /// \ingroup ColorConvert
 /// \brief RGB to LAB

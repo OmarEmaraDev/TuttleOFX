@@ -84,9 +84,9 @@ struct without_alpha_channel_t
 
 };
 
-GIL_DEFINE_ALL_TYPEDEFS( 64, hsl )
-GIL_DEFINE_ALL_TYPEDEFS( 64s, hsl )
-GIL_DEFINE_ALL_TYPEDEFS( 64f, hsl )
+BOOST_GIL_DEFINE_ALL_TYPEDEFS(64, uint64_t, hsl)
+BOOST_GIL_DEFINE_ALL_TYPEDEFS(64s, int64_t, hsl)
+BOOST_GIL_DEFINE_ALL_TYPEDEFS(64f, double, hsl)
 
 }
 }
