@@ -999,7 +999,7 @@ std::ostream& ImageEffectNode::print(std::ostream& os) const
     for(ImageEffectNode::ParamVector::const_iterator it = v._paramVector.begin(), itEnd = v._paramVector.end(); it != itEnd;
         ++it)
     {
-        os << "  * " << it->getName() << " (" << it->getLabel() << "): " << it->displayValues(os) << std::endl;
+        os << "  * " << it->getName() << " (" << it->getLabel() << "): " << it->displayValues(os).rdbuf() << std::endl;
     }
     os << "________________________________________________________________________________" << std::endl;
     return os;
