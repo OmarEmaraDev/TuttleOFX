@@ -72,7 +72,7 @@ public:
     void setBeforeRenderCallback(Callback* cb);
 
 private:
-    mutable std::auto_ptr<INode> _node;
+    mutable std::unique_ptr<INode> _node;
 };
 }
 }

@@ -253,7 +253,7 @@ OfxhImageEffectNodeDescriptor& OfxhImageEffectPlugin::describeInContextAction(co
 
     tuttle::host::ofx::property::OfxhSet inarg(inargspec);
 
-    std::auto_ptr<tuttle::host::ofx::imageEffect::OfxhImageEffectNodeDescriptor> newContext(
+    std::unique_ptr<tuttle::host::ofx::imageEffect::OfxhImageEffectNodeDescriptor> newContext(
         core().getHost().makeDescriptor(getDescriptor(), *this));
     int rval = kOfxStatFailed;
     if(_pluginLoadGuard->getOfxPlugin())

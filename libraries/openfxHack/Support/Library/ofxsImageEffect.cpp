@@ -2818,7 +2818,7 @@ void setHost(OfxHost* host)
 
 OfxPlugInfo generatePlugInfo(PluginFactory* factory)
 {
-    std::auto_ptr<OfxPlugin> ofxPlugin(new OfxPlugin());
+    std::unique_ptr<OfxPlugin> ofxPlugin(new OfxPlugin());
     ofxPlugin->pluginApi = kOfxImageEffectPluginApi;
     ofxPlugin->apiVersion = kOfxImageEffectPluginApiVersion;
     ofxPlugin->pluginIdentifier = factory->getID().c_str();
