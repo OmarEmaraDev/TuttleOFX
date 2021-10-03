@@ -23,6 +23,3 @@ tuttle_ofx_plugin_add_library(Text Freetype)
 
 # On linux
 target_link_libraries(Text fontconfig)
-
-# FIXME should get rid of this include
-include_directories(${PROJECT_SOURCE_DIR}/libraries/boostHack)
