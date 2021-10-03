@@ -3,6 +3,7 @@
 
 #include <terry/point/operations.hpp>
 #include <boost/gil/utilities.hpp>
+#include <boost/gil/point.hpp>
 #include <boost/static_assert.hpp>
 
 namespace tuttle

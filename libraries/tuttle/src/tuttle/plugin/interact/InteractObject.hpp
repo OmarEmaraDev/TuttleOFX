@@ -4,6 +4,7 @@
 #include "interact.hpp"
 #include <ofxsInteract.h>
 #include <boost/gil/utilities.hpp>
+#include <boost/gil/point.hpp>
 
 #include <boost/math/special_functions/pow.hpp>
 

@@ -8,6 +8,7 @@
 #include <tuttle/plugin/context/SamplerPlugin.hpp>
 
 #include <boost/gil/utilities.hpp>
+#include <boost/gil/point.hpp>
 #include <string>
 
 namespace tuttle

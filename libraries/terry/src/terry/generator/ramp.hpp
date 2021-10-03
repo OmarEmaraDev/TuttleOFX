@@ -2,6 +2,7 @@
 #define _TERRY_GENERATOR_RAMP_HPP_
 
 #include <boost/gil/utilities.hpp>
+#include <boost/gil/point.hpp>
 #include <terry/numeric/operations.hpp>
 #include <terry/numeric/operations_assign.hpp>
 #include <terry/numeric/assign.hpp>

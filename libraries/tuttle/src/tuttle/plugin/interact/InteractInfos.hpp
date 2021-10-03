@@ -11,6 +11,7 @@
 #include <ofxsImageEffect.h>
 
 #include <boost/gil/utilities.hpp>
+#include <boost/gil/point.hpp>
 
 namespace tuttle
 {

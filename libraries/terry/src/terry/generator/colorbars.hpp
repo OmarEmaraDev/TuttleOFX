@@ -2,6 +2,7 @@
 #define _TERRY_GENERATOR_COLORBARS_HPP_
 
 #include <boost/gil/utilities.hpp>
+#include <boost/gil/point.hpp>
 
 #include <cmath>
 

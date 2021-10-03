@@ -9,7 +9,8 @@
 #ifndef _TERRY_NUMERIC_AFFINE_HPP_
 #define _TERRY_NUMERIC_AFFINE_HPP_
 
-#include <boost/gil/utilities.hpp> // point2
+#include <boost/gil/utilities.hpp>
+#include <boost/gil/point.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////
 /// \file

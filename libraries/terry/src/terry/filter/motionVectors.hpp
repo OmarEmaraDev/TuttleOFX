@@ -8,6 +8,7 @@
 #include <terry/point/operations.hpp>
 
 #include <boost/gil/utilities.hpp>
+#include <boost/gil/point.hpp>
 #include <boost/gil/typedefs.hpp>
 
 #include <boost/mpl/if.hpp>

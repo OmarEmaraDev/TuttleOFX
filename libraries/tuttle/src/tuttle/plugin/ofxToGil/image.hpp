@@ -6,6 +6,7 @@
 #include <ofxsImageEffect.h>
 
 #include <boost/gil/utilities.hpp>
+#include <boost/gil/point.hpp>
 #include <boost/gil/image.hpp>
 #include <boost/gil/image_view.hpp>
 #include <boost/gil/image_view_factory.hpp>

@@ -2,6 +2,7 @@
 #define _TERRY_MATH_RECT_HPP_
 
 #include <boost/gil/utilities.hpp>
+#include <boost/gil/point.hpp>
 
 #include <cmath>
 #include <algorithm>

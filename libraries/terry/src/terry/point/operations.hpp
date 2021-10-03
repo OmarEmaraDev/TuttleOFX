@@ -2,6 +2,7 @@
 #define _TERRY_POINT_OPERATIONS_HPP_
 
 #include <boost/gil/utilities.hpp>
+#include <boost/gil/point.hpp>
 
 /// \ingroup PointModel
 template <typename T>

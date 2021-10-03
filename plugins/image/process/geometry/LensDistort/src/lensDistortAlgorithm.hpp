@@ -13,6 +13,7 @@
 
 #include <boost/gil/image.hpp>
 #include <boost/gil/utilities.hpp>
+#include <boost/gil/point.hpp>
 #include <boost/gil/typedefs.hpp>
 #include <boost/math/constants/constants.hpp>
 #include <boost/assert.hpp>
