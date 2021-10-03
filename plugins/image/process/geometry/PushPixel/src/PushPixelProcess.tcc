@@ -94,7 +94,7 @@ void PushPixelProcess<View>::multiThreadProcessImages(const OfxRectI& procWindow
 
     // use View channel type if floating point else use bit32f
     typedef typename channel_mapping_type<View>::type Channel;
-    typedef typename boost::mpl::if_<boost::is_floating_point<Channel>, Channel, bits32f>::type ChannelFloat;
+    typedef typename boost::mpl::if_<boost::is_floating_point<Channel>, Channel, float32_t>::type ChannelFloat;
     typedef pixel<ChannelFloat, gray_layout_t> PixelGray;
     typedef image<PixelGray, false> ImageGray;
     typedef typename ImageGray::view_t ViewGray;

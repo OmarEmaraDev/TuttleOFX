@@ -905,12 +905,12 @@ typedef int16_t bits16s;
 /// \ingroup bits32s
 typedef int32_t bits32s;
 
-/// \defgroup bits32f bits32f
+/// \defgroup float32_t float32_t
 /// \ingroup ChannelModel
 /// \brief 32-bit floating point channel type with range [0.0f ... 1.0f]. Models ChannelValueConcept
 
-/// \ingroup bits32f
-typedef scoped_channel_value<float, float_zero, float_one> bits32f;
+/// \ingroup float32_t
+typedef scoped_channel_value<float, float_zero, float_one> float32_t;
 }
 } // namespace boost::gil
 

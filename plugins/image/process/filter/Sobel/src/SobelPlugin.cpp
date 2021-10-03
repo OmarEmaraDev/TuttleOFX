@@ -53,7 +53,7 @@ void localDoGilRender2(Plugin& plugin, const OFX::RenderArguments& args, const O
         }
         case OFX::eBitDepthFloat:
         {
-            localDoGilRender2<Process, sPlanar, SLayout, SBits, dPlanar, DLayout, boost::gil::bits32f>(plugin, args);
+            localDoGilRender2<Process, sPlanar, SLayout, SBits, dPlanar, DLayout, boost::gil::float32_t>(plugin, args);
             return;
         }
         case OFX::eBitDepthCustom:
@@ -127,7 +127,7 @@ void localDoGilRender2(Plugin& plugin, const OFX::RenderArguments& args, const O
         }
         case OFX::eBitDepthFloat:
         {
-            localDoGilRender2<Process, sPlanar, SLayout, boost::gil::bits32f>(plugin, args, dPlanar, dComponent, dBitDepth);
+            localDoGilRender2<Process, sPlanar, SLayout, boost::gil::float32_t>(plugin, args, dPlanar, dComponent, dBitDepth);
             return;
         }
         case OFX::eBitDepthCustom:

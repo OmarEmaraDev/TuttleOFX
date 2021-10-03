@@ -163,7 +163,7 @@ void AnisotropicDiffusionProcess<View>::blur_anisotropic(View& dst, View& src, V
         }
 
         // Create a float compatible view
-        typedef pixel<bits32f, devicen_layout_t<num_channels<View>::value> > comp_pixel_t;
+        typedef pixel<float32_t, devicen_layout_t<num_channels<View>::value> > comp_pixel_t;
         typedef image<comp_pixel_t, false, std::allocator<unsigned char> > comp_image_t;
         typedef typename view_type_from_pixel<comp_pixel_t>::type comp_view_t;
         typedef typename comp_view_t::x_iterator tmp_iterator;

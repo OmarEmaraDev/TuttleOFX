@@ -71,7 +71,7 @@ struct Pixel_copy
         // recopy channels
         for(int v = 0; v < 3 /*boost::gil::num_channels<Pixel>::type::value*/; ++v)
         {
-            const float val = boost::gil::channel_convert<boost::gil::bits32f>(p[v]); // capt channel (red, green or blue)
+            const float val = boost::gil::channel_convert<boost::gil::float32_t>(p[v]); // capt channel (red, green or blue)
             _data.push_back(val);                                                     // add value to buffer data
         }
         return p;

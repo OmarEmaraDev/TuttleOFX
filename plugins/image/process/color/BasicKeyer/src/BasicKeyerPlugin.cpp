@@ -91,7 +91,7 @@ BasicKeyerProcessParams<View> BasicKeyerPlugin::getProcessParams() const
         }
         case OFX::eBitDepthFloat :
         {
-            processBitDepth<ColorSpace, bits32f_t> p( *this );
+            processBitDepth<ColorSpace, float32_t_t> p( *this );
             return;
         }
         case OFX::eBitDepthNone :

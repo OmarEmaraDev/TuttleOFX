@@ -151,7 +151,7 @@ struct color_to_pixel
  * @param ColorsFromRoot mpl vector of colors corresponding to the steps to go
  *                         from one color to the root XYZ color.
  * @param sizeLeft size of the remaining parts of the color steps to process
- * @param ChannelType type used from pixels (defined the bitdepth used: bits8, bits32f, ...)
+ * @param ChannelType type used from pixels (defined the bitdepth used: bits8, float32_t, ...)
  * @param fromRoot direction of the color conversion
  */
 template <typename ColorsFromRoot, std::size_t sizeLeft, class ChannelType, bool fromRoot>

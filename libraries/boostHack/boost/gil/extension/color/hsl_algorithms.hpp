@@ -11,7 +11,7 @@ namespace toolbox
 {
 
 template <typename HSL_VIEW>
-void shift_hue(const HSL_VIEW& img, const bits32f value)
+void shift_hue(const HSL_VIEW& img, const float32_t value)
 {
     // make sure src and dst are views
     // make sure src and dst are either hsl or hsv
@@ -22,7 +22,7 @@ void shift_hue(const HSL_VIEW& img, const bits32f value)
 
         for(int x = 0; x < img.width(); ++x)
         {
-            bits32f& hue = get_color(img_it[x], boost::gil::hsl_color_space::hue_t());
+            float32_t& hue = get_color(img_it[x], boost::gil::hsl_color_space::hue_t());
 
             hue += value;
 

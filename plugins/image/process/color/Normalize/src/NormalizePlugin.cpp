@@ -282,7 +282,7 @@ void NormalizePlugin::render(const OFX::RenderArguments& args)
             {
                 case OFX::eBitDepthFloat:
                 {
-                    doGilRender<NormalizeProcess, false, rgba_layout_t, bits32f>(*this, args);
+                    doGilRender<NormalizeProcess, false, rgba_layout_t, float32_t>(*this, args);
                     return;
                 }
                 case OFX::eBitDepthUShort:
@@ -311,7 +311,7 @@ void NormalizePlugin::render(const OFX::RenderArguments& args)
             {
                 case OFX::eBitDepthFloat:
                 {
-                    doGilRender<NormalizeProcess, false, rgb_layout_t, bits32f>(*this, args);
+                    doGilRender<NormalizeProcess, false, rgb_layout_t, float32_t>(*this, args);
                     return;
                 }
                 case OFX::eBitDepthUShort:
@@ -340,7 +340,7 @@ void NormalizePlugin::render(const OFX::RenderArguments& args)
             {
                 case OFX::eBitDepthFloat:
                 {
-                    doGilRender<NormalizeProcess, false, gray_layout_t, bits32f>(*this, args);
+                    doGilRender<NormalizeProcess, false, gray_layout_t, float32_t>(*this, args);
                     return;
                 }
                 case OFX::eBitDepthUShort:

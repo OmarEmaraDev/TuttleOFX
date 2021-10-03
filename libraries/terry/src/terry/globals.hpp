@@ -57,7 +57,7 @@ struct layout_type
  * @return the current type T if it's a floating point type,
  *         else return F
  */
-template <typename T, typename F = boost::gil::bits32f>
+template <typename T, typename F = boost::gil::float32_t>
 struct floating_channel_type_t
 {
     typedef typename boost::mpl::if_<boost::is_floating_point<T>, T, F>::type type;

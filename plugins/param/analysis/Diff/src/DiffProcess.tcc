@@ -114,10 +114,10 @@ void DiffProcess<View>::multiThreadProcessImages(const OfxRectI& procWindowRoW)
 
 template <class View>
 template <class SView>
-boost::gil::pixel<boost::gil::bits32f, boost::gil::layout<typename boost::gil::color_space_type<SView>::type> >
+boost::gil::pixel<boost::gil::float32_t, boost::gil::layout<typename boost::gil::color_space_type<SView>::type> >
 DiffProcess<View>::psnr(const SView& v1, const SView& v2, const SView& dst)
 {
-    typedef boost::gil::pixel<boost::gil::bits32f, boost::gil::layout<typename boost::gil::color_space_type<SView>::type> >
+    typedef boost::gil::pixel<boost::gil::float32_t, boost::gil::layout<typename boost::gil::color_space_type<SView>::type> >
         Pixel32F;
     typedef typename boost::gil::channel_type<Pixel32F>::type Value32F;
     typedef typename boost::gil::channel_type<typename SView::value_type>::type SValueType;
@@ -138,11 +138,11 @@ DiffProcess<View>::psnr(const SView& v1, const SView& v2, const SView& dst)
 
 template <class View>
 template <class SView>
-boost::gil::pixel<boost::gil::bits32f, boost::gil::layout<typename boost::gil::color_space_type<SView>::type> >
+boost::gil::pixel<boost::gil::float32_t, boost::gil::layout<typename boost::gil::color_space_type<SView>::type> >
 DiffProcess<View>::mse(const SView& v1, const SView& v2, const SView& dst, bool outputIsPsnr)
 {
     using namespace terry;
-    typedef boost::gil::pixel<boost::gil::bits32f, boost::gil::layout<typename boost::gil::color_space_type<SView>::type> >
+    typedef boost::gil::pixel<boost::gil::float32_t, boost::gil::layout<typename boost::gil::color_space_type<SView>::type> >
         Pixel32F;
     typedef typename boost::gil::channel_type<Pixel32F>::type Value32F;
     typedef typename boost::gil::channel_type<typename SView::value_type>::type SValueType;

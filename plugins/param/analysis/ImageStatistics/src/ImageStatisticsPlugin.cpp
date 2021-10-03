@@ -128,7 +128,7 @@ void ImageStatisticsPlugin::render(const OFX::RenderArguments& args)
             {
                 case OFX::eBitDepthFloat:
                 {
-                    doGilRender<ImageStatisticsProcess, false, boost::gil::rgba_layout_t, boost::gil::bits32f>(*this, args);
+                    doGilRender<ImageStatisticsProcess, false, boost::gil::rgba_layout_t, boost::gil::float32_t>(*this, args);
                     return;
                 }
                 case OFX::eBitDepthUByte:

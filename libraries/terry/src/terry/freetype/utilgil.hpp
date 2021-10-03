@@ -80,11 +80,11 @@ inline void copy_and_convert_alpha_blended_pixels(const GlyphView& glyphView, co
     // typedef typename GlyphView::value_type GlyphPixel;
     typedef typename View::value_type Pixel;
 
-    // typedef pixel<bits32f, layout<typename color_space_type<GlyphView>::type> > GlyphPixel32f;
+    // typedef pixel<float32_t, layout<typename color_space_type<GlyphView>::type> > GlyphPixel32f;
     // typedef pixel<typename channel_type<view_t>::type, layout<gray_t> > PixelGray;
 
     BOOST_STATIC_ASSERT((boost::is_same<typename color_space_type<GlyphView>::type, gray_t>::value));
-    // BOOST_STATIC_ASSERT(( boost::is_same<typename channel_type<GlyphView>::type, bits32f>::value ));
+    // BOOST_STATIC_ASSERT(( boost::is_same<typename channel_type<GlyphView>::type, float32_t>::value ));
 
     for(int y = 0; y < dstView.height(); ++y)
     {
@@ -93,8 +93,8 @@ inline void copy_and_convert_alpha_blended_pixels(const GlyphView& glyphView, co
         for(int x = 0; x < dstView.width(); ++x, ++it_glyph, ++it_img)
         {
             Pixel pColor = glyphColor;
-            const bits32f mask = channel_convert<bits32f>(get_color(*it_glyph, gray_color_t())) *
-                                 channel_convert<bits32f>(alpha_or_max(pColor));
+            const float32_t mask = channel_convert<float32_t>(get_color(*it_glyph, gray_color_t())) *
+                                 channel_convert<float32_t>(alpha_or_max(pColor));
             numeric::pixel_multiplies_scalar_assign_t<float, Pixel>()(mask, pColor);
             numeric::pixel_multiplies_scalar_assign_t<float, Pixel>()(channel_invert(mask), *it_img);
             numeric::pixel_plus_assign_t<Pixel, Pixel>()(pColor, *it_img);

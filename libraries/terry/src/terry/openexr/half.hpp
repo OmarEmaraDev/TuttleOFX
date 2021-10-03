@@ -96,16 +96,16 @@ struct channel_converter_unsigned<bits16h, bits16h> : public std::unary_function
 
 ///////////////////////////////////////////////////////////////////////////////
 template <>
-struct channel_converter_unsigned<bits32f, bits16h> : public std::unary_function<bits32f, bits16h>
+struct channel_converter_unsigned<float32_t, bits16h> : public std::unary_function<float32_t, bits16h>
 {
-    bits16h operator()(bits32f f) const { return bits16h(half(f)); }
+    bits16h operator()(float32_t f) const { return bits16h(half(f)); }
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 template <>
-struct channel_converter_unsigned<bits16h, bits32f> : public std::unary_function<bits16h, bits32f>
+struct channel_converter_unsigned<bits16h, float32_t> : public std::unary_function<bits16h, float32_t>
 {
-    bits32f operator()(bits16h h) const { return bits32f(float(half(h))); }
+    float32_t operator()(bits16h h) const { return float32_t(float(half(h))); }
 };
 
 ///////////////////////////////////////////////////////////////////////////////

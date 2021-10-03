@@ -116,13 +116,13 @@ void OpenImageIOReaderProcess<View>::multiThreadProcessImages(const OfxRectI& pr
             switch(spec.nchannels)
             {
                 case 1:
-                    readImage<bits32f, gray_layout_t, gray32f_view_t>(this->_dstView, img, 4);
+                    readImage<float32_t, gray_layout_t, gray32f_view_t>(this->_dstView, img, 4);
                     break;
                 case 3:
-                    readImage<bits32f, rgb_layout_t, rgb32f_view_t>(this->_dstView, img, 4);
+                    readImage<float32_t, rgb_layout_t, rgb32f_view_t>(this->_dstView, img, 4);
                     break;
                 case 4:
-                    readImage<bits32f, rgba_layout_t, rgba32f_view_t>(this->_dstView, img, 4);
+                    readImage<float32_t, rgba_layout_t, rgba32f_view_t>(this->_dstView, img, 4);
                     break;
                 default:
                     img->close();

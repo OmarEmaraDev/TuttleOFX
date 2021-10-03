@@ -59,14 +59,14 @@ struct default_color_converter_impl<rgb_t, xyz_t>
     {
         using namespace xyz_color_space;
 
-        // only bits32f for xyz is supported
-        bits32f temp_red = channel_convert<bits32f>(get_color(src, red_t()));
-        bits32f temp_green = channel_convert<bits32f>(get_color(src, green_t()));
-        bits32f temp_blue = channel_convert<bits32f>(get_color(src, blue_t()));
+        // only float32_t for xyz is supported
+        float32_t temp_red = channel_convert<float32_t>(get_color(src, red_t()));
+        float32_t temp_green = channel_convert<float32_t>(get_color(src, green_t()));
+        float32_t temp_blue = channel_convert<float32_t>(get_color(src, blue_t()));
 
-        bits32f normalized_r = temp_red / 255.f;
-        bits32f normalized_g = temp_green / 255.f;
-        bits32f normalized_b = temp_blue / 255.f;
+        float32_t normalized_r = temp_red / 255.f;
+        float32_t normalized_g = temp_green / 255.f;
+        float32_t normalized_b = temp_blue / 255.f;
 
         if(normalized_r > 0.04045f)
         {
@@ -99,7 +99,7 @@ struct default_color_converter_impl<rgb_t, xyz_t>
         normalized_g *= 100.f;
         normalized_b *= 100.f;
 
-        bits32f x, y, z;
+        float32_t x, y, z;
         x = normalized_r * 0.4124f + normalized_g * 0.3576f + normalized_b * 0.1805f;
         y = normalized_r * 0.2126f + normalized_g * 0.7152f + normalized_b * 0.0722f;
         z = normalized_r * 0.0193f + normalized_g * 0.1192f + normalized_b * 0.9505f;
@@ -120,17 +120,17 @@ struct default_color_converter_impl<xyz_t, rgb_t>
     {
         using namespace xyz_color_space;
 
-        bits32f x = get_color(src, x_t());
-        bits32f y = get_color(src, y_t());
-        bits32f z = get_color(src, z_t());
+        float32_t x = get_color(src, x_t());
+        float32_t y = get_color(src, y_t());
+        float32_t z = get_color(src, z_t());
 
-        bits32f normalized_x = x / 100.f;
-        bits32f normalized_y = y / 100.f;
-        bits32f normalized_z = z / 100.f;
+        float32_t normalized_x = x / 100.f;
+        float32_t normalized_y = y / 100.f;
+        float32_t normalized_z = z / 100.f;
 
-        bits32f result_r = normalized_x * 3.2406f + normalized_y * -1.5372f + normalized_z * -0.4986f;
-        bits32f result_g = normalized_x * -0.9689f + normalized_y * 1.8758f + normalized_z * 0.0415f;
-        bits32f result_b = normalized_x * 0.0557f + normalized_y * -0.2040f + normalized_z * 1.0570f;
+        float32_t result_r = normalized_x * 3.2406f + normalized_y * -1.5372f + normalized_z * -0.4986f;
+        float32_t result_g = normalized_x * -0.9689f + normalized_y * 1.8758f + normalized_z * 0.0415f;
+        float32_t result_b = normalized_x * 0.0557f + normalized_y * -0.2040f + normalized_z * 1.0570f;
 
         if(result_r > 0.0031308f)
         {
@@ -159,7 +159,7 @@ struct default_color_converter_impl<xyz_t, rgb_t>
             result_b = 12.92f * result_b;
         }
 
-        bits32f red, green, blue;
+        float32_t red, green, blue;
         red = result_r * 255.f;
         green = result_g * 255.f;
         blue = result_b * 255.f;

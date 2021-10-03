@@ -27,7 +27,7 @@ public:
     typedef typename boost::gil::channel_type<View>::type d_channel_t;
     // typedef typename boost::gil::channel_convert_to_unsigned<d_channel_t>::type channel_t;
 
-    typedef boost::gil::pixel<boost::gil::bits32f, d_channel_t> Ratio_pixel_t;
+    typedef boost::gil::pixel<boost::gil::float32_t, d_channel_t> Ratio_pixel_t;
 
     typedef float Scalar;
 

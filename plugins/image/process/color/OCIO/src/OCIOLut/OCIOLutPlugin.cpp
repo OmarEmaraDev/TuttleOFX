@@ -47,7 +47,7 @@ void OCIOLutPlugin::render(const OFX::RenderArguments& args)
             {
                 case OFX::eBitDepthFloat:
                 {
-                    doGilRender<OCIOLutProcess, false, rgba_layout_t, bits32f>(*this, args);
+                    doGilRender<OCIOLutProcess, false, rgba_layout_t, float32_t>(*this, args);
                     return;
                 }
                 case OFX::eBitDepthUByte:
@@ -68,7 +68,7 @@ void OCIOLutPlugin::render(const OFX::RenderArguments& args)
             {
                 case OFX::eBitDepthFloat:
                 {
-                    doGilRender<OCIOLutProcess, false, rgb_layout_t, bits32f>(*this, args);
+                    doGilRender<OCIOLutProcess, false, rgb_layout_t, float32_t>(*this, args);
                     return;
                 }
                 case OFX::eBitDepthUByte:

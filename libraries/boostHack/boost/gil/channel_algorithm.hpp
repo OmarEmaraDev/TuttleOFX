@@ -118,8 +118,8 @@ and \p detail::channel_convert_from_unsigned to convert between the signed and u
 
 Example:
 \code
-// bits32f is a floating point channel with range [0.0f ... 1.0f]
-bits32f src_channel = channel_traits<bits32f>::max_value();
+// float32_t is a floating point channel with range [0.0f ... 1.0f]
+float32_t src_channel = channel_traits<float32_t>::max_value();
 assert(src_channel == 1);
 
 // bits8 is 8-bit unsigned integral channel (typedef-ed from unsigned char)
@@ -324,58 +324,58 @@ struct channel_converter_unsigned_integral_nondivisible<SrcChannelV, DstChannelV
 } // namespace detail
 
 /////////////////////////////////////////////////////
-///  bits32f conversion
+///  float32_t conversion
 /////////////////////////////////////////////////////
 
 template <typename DstChannelV>
-struct channel_converter_unsigned<bits32f, DstChannelV> : public std::unary_function<bits32f, DstChannelV>
+struct channel_converter_unsigned<float32_t, DstChannelV> : public std::unary_function<float32_t, DstChannelV>
 {
-    DstChannelV operator()(bits32f x) const
+    DstChannelV operator()(float32_t x) const
     {
         typedef typename detail::unsigned_integral_max_value<DstChannelV>::value_type dst_integer_t;
 
-        const bits32f convertedValue = x * channel_traits<DstChannelV>::max_value() + 0.5f;
-        const bits32f clampedValue = std::min((bits32f)channel_traits<DstChannelV>::max_value(),
-                                              std::max((bits32f)channel_traits<DstChannelV>::min_value(), convertedValue));
+        const float32_t convertedValue = x * channel_traits<DstChannelV>::max_value() + 0.5f;
+        const float32_t clampedValue = std::min((float32_t)channel_traits<DstChannelV>::max_value(),
+                                              std::max((float32_t)channel_traits<DstChannelV>::min_value(), convertedValue));
 
         return DstChannelV(static_cast<dst_integer_t>(clampedValue));
     }
 };
 
 template <typename SrcChannelV>
-struct channel_converter_unsigned<SrcChannelV, bits32f> : public std::unary_function<SrcChannelV, bits32f>
+struct channel_converter_unsigned<SrcChannelV, float32_t> : public std::unary_function<SrcChannelV, float32_t>
 {
-    bits32f operator()(SrcChannelV x) const { return bits32f(x / float(channel_traits<SrcChannelV>::max_value())); }
+    float32_t operator()(SrcChannelV x) const { return float32_t(x / float(channel_traits<SrcChannelV>::max_value())); }
 };
 
 template <>
-struct channel_converter_unsigned<bits32f, bits32f> : public std::unary_function<bits32f, bits32f>
+struct channel_converter_unsigned<float32_t, float32_t> : public std::unary_function<float32_t, float32_t>
 {
-    bits32f operator()(bits32f x) const { return x; }
+    float32_t operator()(float32_t x) const { return x; }
 };
 
 /// \brief 32 bit <-> float channel conversion
 template <>
-struct channel_converter_unsigned<bits32, bits32f> : public std::unary_function<bits32, bits32f>
+struct channel_converter_unsigned<bits32, float32_t> : public std::unary_function<bits32, float32_t>
 {
-    bits32f operator()(bits32 x) const
+    float32_t operator()(bits32 x) const
     {
         // unfortunately without an explicit check it is possible to get a round-off error. We must ensure that max_value of
-        // bits32 matches max_value of bits32f
+        // bits32 matches max_value of float32_t
         if(x >= channel_traits<bits32>::max_value())
-            return channel_traits<bits32f>::max_value();
+            return channel_traits<float32_t>::max_value();
         return float(x) / float(channel_traits<bits32>::max_value());
     }
 };
 /// \brief 32 bit <-> float channel conversion
 template <>
-struct channel_converter_unsigned<bits32f, bits32> : public std::unary_function<bits32f, bits32>
+struct channel_converter_unsigned<float32_t, bits32> : public std::unary_function<float32_t, bits32>
 {
-    bits32 operator()(bits32f x) const
+    bits32 operator()(float32_t x) const
     {
         // unfortunately without an explicit check it is possible to get a round-off error. We must ensure that max_value of
-        // bits32 matches max_value of bits32f
-        if(x >= channel_traits<bits32f>::max_value())
+        // bits32 matches max_value of float32_t
+        if(x >= channel_traits<float32_t>::max_value())
             return channel_traits<bits32>::max_value();
         return bits32(x * channel_traits<bits32>::max_value() + 0.5f);
     }
@@ -539,9 +539,9 @@ struct channel_multiplier_unsigned<bits16> : public std::binary_function<bits16,
 
 /// \brief Specialization of channel_multiply for float 0..1 channels
 template <>
-struct channel_multiplier_unsigned<bits32f> : public std::binary_function<bits32f, bits32f, bits32f>
+struct channel_multiplier_unsigned<float32_t> : public std::binary_function<float32_t, float32_t, float32_t>
 {
-    bits32f operator()(bits32f a, bits32f b) const { return a * b; }
+    float32_t operator()(float32_t a, float32_t b) const { return a * b; }
 };
 
 /// \brief A function object to multiply two channels. result = a * b / max_value

@@ -35,7 +35,7 @@ void doGilRender(Plugin& plugin, const OFX::RenderArguments& args, const OFX::EB
         }
         case OFX::eBitDepthFloat:
         {
-            doGilRender<Process, planar, Layout, boost::gil::bits32f>(plugin, args);
+            doGilRender<Process, planar, Layout, boost::gil::float32_t>(plugin, args);
             return;
         }
         case OFX::eBitDepthCustom:
@@ -134,7 +134,7 @@ void doGilRender2(Plugin& plugin, const OFX::RenderArguments& args, const OFX::E
         }
         case OFX::eBitDepthFloat:
         {
-            doGilRender2<Process, sPlanar, SLayout, SBits, dPlanar, DLayout, boost::gil::bits32f>(plugin, args);
+            doGilRender2<Process, sPlanar, SLayout, SBits, dPlanar, DLayout, boost::gil::float32_t>(plugin, args);
             return;
         }
         case OFX::eBitDepthCustom:
@@ -212,7 +212,7 @@ void doGilRender2(Plugin& plugin, const OFX::RenderArguments& args, const OFX::E
         }
         case OFX::eBitDepthFloat:
         {
-            doGilRender2<Process, sPlanar, SLayout, boost::gil::bits32f>(plugin, args, dPlanar, dComponent, dBitDepth);
+            doGilRender2<Process, sPlanar, SLayout, boost::gil::float32_t>(plugin, args, dPlanar, dComponent, dBitDepth);
             return;
         }
         case OFX::eBitDepthCustom:

@@ -77,7 +77,7 @@ void ColorSuppressPlugin::render(const OFX::RenderArguments& args)
             }
             case OFX::eBitDepthFloat:
             {
-                doGilRender<ColorSuppressProcess, false, boost::gil::rgba_layout_t, boost::gil::bits32f>(*this, args);
+                doGilRender<ColorSuppressProcess, false, boost::gil::rgba_layout_t, boost::gil::float32_t>(*this, args);
                 break;
             }
             case OFX::eBitDepthNone:

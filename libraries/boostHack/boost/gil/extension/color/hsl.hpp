@@ -59,15 +59,15 @@ struct default_color_converter_impl<rgb_t, hsl_t>
     {
         using namespace hsl_color_space;
 
-        // only bits32f for hsl is supported
-        bits32f temp_red = channel_convert<bits32f>(get_color(src, red_t()));
-        bits32f temp_green = channel_convert<bits32f>(get_color(src, green_t()));
-        bits32f temp_blue = channel_convert<bits32f>(get_color(src, blue_t()));
+        // only float32_t for hsl is supported
+        float32_t temp_red = channel_convert<float32_t>(get_color(src, red_t()));
+        float32_t temp_green = channel_convert<float32_t>(get_color(src, green_t()));
+        float32_t temp_blue = channel_convert<float32_t>(get_color(src, blue_t()));
 
-        bits32f hue, saturation, lightness;
+        float32_t hue, saturation, lightness;
 
-        bits32f min_color = std::min(temp_red, std::min(temp_green, temp_blue));
-        bits32f max_color = std::max(temp_red, std::max(temp_green, temp_blue));
+        float32_t min_color = std::min(temp_red, std::min(temp_green, temp_blue));
+        float32_t max_color = std::max(temp_red, std::max(temp_green, temp_blue));
 
         if(std::abs(max_color - min_color) < 0.001)
         {
@@ -80,7 +80,7 @@ struct default_color_converter_impl<rgb_t, hsl_t>
         }
         else
         {
-            bits32f diff = max_color - min_color;
+            float32_t diff = max_color - min_color;
 
             // lightness calculation
 
@@ -139,7 +139,7 @@ struct default_color_converter_impl<hsl_t, rgb_t>
     {
         using namespace hsl_color_space;
 
-        bits32f red, green, blue;
+        float32_t red, green, blue;
 
         if(std::abs(get_color(src, saturation_t())) < 0.0001)
         {

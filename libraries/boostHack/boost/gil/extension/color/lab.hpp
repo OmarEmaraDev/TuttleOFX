@@ -60,15 +60,15 @@ struct default_color_converter_impl<rgb_t, lab_t>
     {
         using namespace lab_color_space;
 
-        // only bits32f for lab is supported
-        bits32f temp_red = channel_convert<bits32f>(get_color(src, red_t()));
-        bits32f temp_green = channel_convert<bits32f>(get_color(src, green_t()));
-        bits32f temp_blue = channel_convert<bits32f>(get_color(src, blue_t()));
+        // only float32_t for lab is supported
+        float32_t temp_red = channel_convert<float32_t>(get_color(src, red_t()));
+        float32_t temp_green = channel_convert<float32_t>(get_color(src, green_t()));
+        float32_t temp_blue = channel_convert<float32_t>(get_color(src, blue_t()));
 
         // first, transfer to xyz color space
-        bits32f normalized_r = temp_red / 255.f;
-        bits32f normalized_g = temp_green / 255.f;
-        bits32f normalized_b = temp_blue / 255.f;
+        float32_t normalized_r = temp_red / 255.f;
+        float32_t normalized_g = temp_green / 255.f;
+        float32_t normalized_b = temp_blue / 255.f;
 
         if(normalized_r > 0.04045f)
         {
@@ -101,18 +101,18 @@ struct default_color_converter_impl<rgb_t, lab_t>
         normalized_g *= 100.f;
         normalized_b *= 100.f;
 
-        bits32f x, y, z;
+        float32_t x, y, z;
         x = normalized_r * 0.4124f + normalized_g * 0.3576f + normalized_b * 0.1805f;
         y = normalized_r * 0.2126f + normalized_g * 0.7152f + normalized_b * 0.0722f;
         z = normalized_r * 0.0193f + normalized_g * 0.1192f + normalized_b * 0.9505f;
 
         // then, transfer to lab color space
-        bits32f ref_x = 95.047f;
-        bits32f ref_y = 100.000f;
-        bits32f ref_z = 108.883f;
-        bits32f normalized_x = x / ref_x;
-        bits32f normalized_y = y / ref_y;
-        bits32f normalized_z = z / ref_z;
+        float32_t ref_x = 95.047f;
+        float32_t ref_y = 100.000f;
+        float32_t ref_z = 108.883f;
+        float32_t normalized_x = x / ref_x;
+        float32_t normalized_y = y / ref_y;
+        float32_t normalized_z = z / ref_z;
 
         if(normalized_x > 0.008856f)
         {
@@ -141,7 +141,7 @@ struct default_color_converter_impl<rgb_t, lab_t>
             normalized_z = (7.787f * normalized_z) + (16.f / 116.f);
         }
 
-        bits32f luminance, a_color_opponent, b_color_opponent;
+        float32_t luminance, a_color_opponent, b_color_opponent;
         luminance = (116.f * normalized_y) - 16.f;
         a_color_opponent = 500.f * (normalized_x - normalized_y);
         b_color_opponent = 200.f * (normalized_y - normalized_z);
@@ -162,14 +162,14 @@ struct default_color_converter_impl<lab_t, rgb_t>
     {
         using namespace lab_color_space;
 
-        bits32f luminance = get_color(src, luminance_t());
-        bits32f a_color_opponent = get_color(src, a_color_opponent_t());
-        bits32f b_color_opponent = get_color(src, b_color_opponent_t());
+        float32_t luminance = get_color(src, luminance_t());
+        float32_t a_color_opponent = get_color(src, a_color_opponent_t());
+        float32_t b_color_opponent = get_color(src, b_color_opponent_t());
 
         // first, transfer to xyz color space
-        bits32f normalized_y = (luminance + 16.f) / 116.f;
-        bits32f normalized_x = (a_color_opponent / 500.f) + normalized_y;
-        bits32f normalized_z = normalized_y - (b_color_opponent / 200.f);
+        float32_t normalized_y = (luminance + 16.f) / 116.f;
+        float32_t normalized_x = (a_color_opponent / 500.f) + normalized_y;
+        float32_t normalized_z = normalized_y - (b_color_opponent / 200.f);
 
         if(pow(normalized_y, 3.f) > 0.008856f)
         {
@@ -198,10 +198,10 @@ struct default_color_converter_impl<lab_t, rgb_t>
             normalized_z = (normalized_z - 16.f / 116.f) / 7.787f;
         }
 
-        bits32f reference_x = 95.047f;
-        bits32f reference_y = 100.000f;
-        bits32f reference_z = 108.883f;
-        bits32f x, y, z;
+        float32_t reference_x = 95.047f;
+        float32_t reference_y = 100.000f;
+        float32_t reference_z = 108.883f;
+        float32_t x, y, z;
         x = reference_x * normalized_x;
         y = reference_y * normalized_y;
         z = reference_z * normalized_z;
@@ -211,9 +211,9 @@ struct default_color_converter_impl<lab_t, rgb_t>
         normalized_y = y / 100.f;
         normalized_z = z / 100.f;
 
-        bits32f result_r = normalized_x * 3.2406f + normalized_y * -1.5372f + normalized_z * -0.4986f;
-        bits32f result_g = normalized_x * -0.9689f + normalized_y * 1.8758f + normalized_z * 0.0415f;
-        bits32f result_b = normalized_x * 0.0557f + normalized_y * -0.2040f + normalized_z * 1.0570f;
+        float32_t result_r = normalized_x * 3.2406f + normalized_y * -1.5372f + normalized_z * -0.4986f;
+        float32_t result_g = normalized_x * -0.9689f + normalized_y * 1.8758f + normalized_z * 0.0415f;
+        float32_t result_b = normalized_x * 0.0557f + normalized_y * -0.2040f + normalized_z * 1.0570f;
 
         if(result_r > 0.0031308f)
         {
@@ -242,7 +242,7 @@ struct default_color_converter_impl<lab_t, rgb_t>
             result_b = 12.92f * result_b;
         }
 
-        bits32f red, green, blue;
+        float32_t red, green, blue;
         red = result_r * 255.f;
         green = result_g * 255.f;
         blue = result_b * 255.f;
