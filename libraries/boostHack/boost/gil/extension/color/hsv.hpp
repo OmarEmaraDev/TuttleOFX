@@ -140,13 +140,13 @@ struct default_color_converter_impl<hsv_t, rgb_t>
         else
         {
             float32_t frac, p, q, t, h;
-            bits32 i;
+            uint32_t i;
 
             // to bring hue to a number between 0 and 6, better for the calculations
             h = get_color(src, hue_t());
             h *= 6.f;
 
-            i = static_cast<bits32>(floor(h));
+            i = static_cast<uint32_t>(floor(h));
 
             frac = h - i;
 

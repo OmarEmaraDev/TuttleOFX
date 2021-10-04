@@ -152,7 +152,7 @@ struct channel_traits<const T&> : public channel_traits<T>
    // channel_convert its maximum should map to the maximum
    bits64custom_t x = channel_traits<bits64custom_t>::max_value();
    assert(x == 0.5);
-   bits16 y = channel_convert<bits16>(x);
+   uint16_t y = channel_convert<uint16_t>(x);
    assert(y == 65535);
    \endcode
  */
@@ -500,14 +500,14 @@ private:
  */
 
 template <typename BitField, // A type that holds the bits of the pixel from which the channel is referenced. Typically an
-                             // integral type, like boost::uint16_t
+                             // integral type, like uint16_t
           int FirstBit, int NumBits, // Defines the sequence of bits in the data value that contain the channel
           bool Mutable>
 // true if the reference is mutable
 class packed_channel_reference;
 
 template <typename BitField, // A type that holds the bits of the pixel from which the channel is referenced. Typically an
-                             // integral type, like boost::uint16_t
+                             // integral type, like uint16_t
           int NumBits,       // Defines the sequence of bits in the data value that contain the channel
           bool Mutable>
 // true if the reference is mutable
@@ -863,47 +863,47 @@ namespace gil
 ////
 ///////////////////////////////////////////
 
-/// \defgroup bits8 bits8
+/// \defgroup uint8_t uint8_t
 /// \ingroup ChannelModel
 /// \brief 8-bit unsigned integral channel type (typedef from uint8_t). Models ChannelValueConcept
 
-/// \ingroup bits8
-typedef uint8_t bits8;
+/// \ingroup uint8_t
+typedef uint8_t uint8_t;
 
-/// \defgroup bits16 bits16
+/// \defgroup uint16_t uint16_t
 /// \ingroup ChannelModel
 /// \brief 16-bit unsigned integral channel type (typedef from uint16_t). Models ChannelValueConcept
 
-/// \ingroup bits16
-typedef uint16_t bits16;
+/// \ingroup uint16_t
+typedef uint16_t uint16_t;
 
-/// \defgroup bits32 bits32
+/// \defgroup uint32_t uint32_t
 /// \ingroup ChannelModel
 /// \brief 32-bit unsigned integral channel type  (typedef from uint32_t). Models ChannelValueConcept
 
-/// \ingroup bits32
-typedef uint32_t bits32;
+/// \ingroup uint32_t
+typedef uint32_t uint32_t;
 
-/// \defgroup bits8s bits8s
+/// \defgroup int8_t int8_t
 /// \ingroup ChannelModel
 /// \brief 8-bit signed integral channel type (typedef from int8_t). Models ChannelValueConcept
 
-/// \ingroup bits8s
-typedef int8_t bits8s;
+/// \ingroup int8_t
+typedef int8_t int8_t;
 
-/// \defgroup bits16s bits16s
+/// \defgroup int16_t int16_t
 /// \ingroup ChannelModel
 /// \brief 16-bit signed integral channel type (typedef from int16_t). Models ChannelValueConcept
 
-/// \ingroup bits16s
-typedef int16_t bits16s;
+/// \ingroup int16_t
+typedef int16_t int16_t;
 
-/// \defgroup bits32s bits32s
+/// \defgroup int32_t int32_t
 /// \ingroup ChannelModel
 /// \brief 32-bit signed integral channel type (typedef from int32_t). Models ChannelValueConcept
 
-/// \ingroup bits32s
-typedef int32_t bits32s;
+/// \ingroup int32_t
+typedef int32_t int32_t;
 
 /// \defgroup float32_t float32_t
 /// \ingroup ChannelModel

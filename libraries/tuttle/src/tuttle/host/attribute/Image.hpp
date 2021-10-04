@@ -80,12 +80,12 @@ public:
         return _rowAbsDistanceBytes * (_orientation != orientation ? -1 : 1);
     }
 
-    boost::uint8_t* getPixelData();
+    uint8_t* getPixelData();
     void* getVoidPixelData();
     char* getCharPixelData();
-    boost::uint8_t* getOrientedPixelData(const EImageOrientation orientation);
+    uint8_t* getOrientedPixelData(const EImageOrientation orientation);
 
-    boost::uint8_t* pixel(const int x, const int y);
+    uint8_t* pixel(const int x, const int y);
 
     /**
      * @todo clean this!
@@ -94,7 +94,7 @@ public:
      */
     static void copy(Image* dst, Image* src, const OfxPointI& dstCorner, const OfxPointI& srcCorner, const OfxPointI& count);
 
-    void getImage(boost::uint8_t*& outData, int& outWidth, int& outHeight, int& outRowSizeBytes,
+    void getImage(uint8_t*& outData, int& outWidth, int& outHeight, int& outRowSizeBytes,
                   ofx::imageEffect::EBitDepth& outBitDepth, ofx::imageEffect::EPixelComponent& outComponents)
     {
         outData = getPixelData();

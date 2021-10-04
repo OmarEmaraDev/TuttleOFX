@@ -77,7 +77,7 @@ void Jpeg2000ReaderProcess<View>::switchLayoutCopy(const View& dstView)
     {
         case 8:
         {
-            typedef pixel<bits8, Layout> PixelT;
+            typedef pixel<uint8_t, Layout> PixelT;
             switchPrecisionCopy<PixelT>(dstView);
             break;
         }
@@ -89,13 +89,13 @@ void Jpeg2000ReaderProcess<View>::switchLayoutCopy(const View& dstView)
         }
         case 16:
         {
-            typedef pixel<bits16, Layout> PixelT;
+            typedef pixel<uint16_t, Layout> PixelT;
             switchPrecisionCopy<PixelT>(dstView);
             break;
         }
         case 32:
         {
-            typedef pixel<bits32, Layout> PixelT;
+            typedef pixel<uint32_t, Layout> PixelT;
             switchPrecisionCopy<PixelT>(dstView);
             break;
         }

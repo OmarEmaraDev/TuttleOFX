@@ -332,7 +332,7 @@ void EXRWriterProcess<View>::writeImage(View& src, std::string& filepath, Imf::P
             bitsTypeSize = sizeof(float);
             break;
         case Imf::UINT:
-            bitsTypeSize = sizeof(boost::uint32_t);
+            bitsTypeSize = sizeof(uint32_t);
             break;
         default:
             break;

@@ -317,7 +317,7 @@ int main(int argc, char* argv[])
 
     {
         /*
-              bits8 max = 255;
+              uint8_t max = 255;
               rgb16_pixel_t min;
               rgb16_pixel_t diff;
 
@@ -329,7 +329,7 @@ int main(int argc, char* argv[])
               do_it< rgb16_view_t
                    , rgb16_pixel_t
                    , rgb8_view_t
-                   , bits8
+                   , uint8_t
                    > d( view( dst ), max, min, diff );
 
               for_each_pixel( view( src ), d );

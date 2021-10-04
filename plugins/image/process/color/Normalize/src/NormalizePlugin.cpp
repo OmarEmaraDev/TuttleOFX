@@ -287,12 +287,12 @@ void NormalizePlugin::render(const OFX::RenderArguments& args)
                 }
                 case OFX::eBitDepthUShort:
                 {
-                    doGilRender<NormalizeProcess, false, rgba_layout_t, bits16>(*this, args);
+                    doGilRender<NormalizeProcess, false, rgba_layout_t, uint16_t>(*this, args);
                     return;
                 }
                 case OFX::eBitDepthUByte:
                 {
-                    doGilRender<NormalizeProcess, false, rgba_layout_t, bits8>(*this, args);
+                    doGilRender<NormalizeProcess, false, rgba_layout_t, uint8_t>(*this, args);
                     return;
                 }
                 case OFX::eBitDepthCustom:
@@ -316,12 +316,12 @@ void NormalizePlugin::render(const OFX::RenderArguments& args)
                 }
                 case OFX::eBitDepthUShort:
                 {
-                    doGilRender<NormalizeProcess, false, rgb_layout_t, bits16>(*this, args);
+                    doGilRender<NormalizeProcess, false, rgb_layout_t, uint16_t>(*this, args);
                     return;
                 }
                 case OFX::eBitDepthUByte:
                 {
-                    doGilRender<NormalizeProcess, false, rgb_layout_t, bits8>(*this, args);
+                    doGilRender<NormalizeProcess, false, rgb_layout_t, uint8_t>(*this, args);
                     return;
                 }
                 case OFX::eBitDepthCustom:
@@ -345,12 +345,12 @@ void NormalizePlugin::render(const OFX::RenderArguments& args)
                 }
                 case OFX::eBitDepthUShort:
                 {
-                    doGilRender<NormalizeProcess, false, gray_layout_t, bits16>(*this, args);
+                    doGilRender<NormalizeProcess, false, gray_layout_t, uint16_t>(*this, args);
                     return;
                 }
                 case OFX::eBitDepthUByte:
                 {
-                    doGilRender<NormalizeProcess, false, gray_layout_t, bits8>(*this, args);
+                    doGilRender<NormalizeProcess, false, gray_layout_t, uint8_t>(*this, args);
                     return;
                 }
                 case OFX::eBitDepthCustom:

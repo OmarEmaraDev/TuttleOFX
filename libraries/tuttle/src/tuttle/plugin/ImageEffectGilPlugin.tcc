@@ -25,12 +25,12 @@ void doGilRender(Plugin& plugin, const OFX::RenderArguments& args, const OFX::EB
     {
         case OFX::eBitDepthUByte:
         {
-            doGilRender<Process, planar, Layout, boost::gil::bits8>(plugin, args);
+            doGilRender<Process, planar, Layout, uint8_t>(plugin, args);
             return;
         }
         case OFX::eBitDepthUShort:
         {
-            doGilRender<Process, planar, Layout, boost::gil::bits16>(plugin, args);
+            doGilRender<Process, planar, Layout, boost::gil::uint16_t>(plugin, args);
             return;
         }
         case OFX::eBitDepthFloat:
@@ -124,12 +124,12 @@ void doGilRender2(Plugin& plugin, const OFX::RenderArguments& args, const OFX::E
     {
         case OFX::eBitDepthUByte:
         {
-            doGilRender2<Process, sPlanar, SLayout, SBits, dPlanar, DLayout, boost::gil::bits8>(plugin, args);
+            doGilRender2<Process, sPlanar, SLayout, SBits, dPlanar, DLayout, uint8_t>(plugin, args);
             return;
         }
         case OFX::eBitDepthUShort:
         {
-            doGilRender2<Process, sPlanar, SLayout, SBits, dPlanar, DLayout, boost::gil::bits16>(plugin, args);
+            doGilRender2<Process, sPlanar, SLayout, SBits, dPlanar, DLayout, boost::gil::uint16_t>(plugin, args);
             return;
         }
         case OFX::eBitDepthFloat:
@@ -202,12 +202,12 @@ void doGilRender2(Plugin& plugin, const OFX::RenderArguments& args, const OFX::E
     {
         case OFX::eBitDepthUByte:
         {
-            doGilRender2<Process, sPlanar, SLayout, boost::gil::bits8>(plugin, args, dPlanar, dComponent, dBitDepth);
+            doGilRender2<Process, sPlanar, SLayout, uint8_t>(plugin, args, dPlanar, dComponent, dBitDepth);
             return;
         }
         case OFX::eBitDepthUShort:
         {
-            doGilRender2<Process, sPlanar, SLayout, boost::gil::bits16>(plugin, args, dPlanar, dComponent, dBitDepth);
+            doGilRender2<Process, sPlanar, SLayout, boost::gil::uint16_t>(plugin, args, dPlanar, dComponent, dBitDepth);
             return;
         }
         case OFX::eBitDepthFloat:

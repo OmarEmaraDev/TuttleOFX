@@ -69,13 +69,13 @@ void OpenImageIOReaderProcess<View>::multiThreadProcessImages(const OfxRectI& pr
             switch(spec.nchannels)
             {
                 case 1:
-                    readImage<bits8, gray_layout_t, gray8_view_t>(this->_dstView, img, 1);
+                    readImage<uint8_t, gray_layout_t, gray8_view_t>(this->_dstView, img, 1);
                     break;
                 case 3:
-                    readImage<bits8, rgb_layout_t, rgb8_view_t>(this->_dstView, img, 1);
+                    readImage<uint8_t, rgb_layout_t, rgb8_view_t>(this->_dstView, img, 1);
                     break;
                 case 4:
-                    readImage<bits8, rgba_layout_t, rgba8_view_t>(this->_dstView, img, 1);
+                    readImage<uint8_t, rgba_layout_t, rgba8_view_t>(this->_dstView, img, 1);
                     break;
                 default:
                     img->close();
@@ -91,13 +91,13 @@ void OpenImageIOReaderProcess<View>::multiThreadProcessImages(const OfxRectI& pr
             switch(spec.nchannels)
             {
                 case 1:
-                    readImage<bits16, gray_layout_t, gray16_view_t>(this->_dstView, img, 2);
+                    readImage<uint16_t, gray_layout_t, gray16_view_t>(this->_dstView, img, 2);
                     break;
                 case 3:
-                    readImage<bits16, rgb_layout_t, rgb16_view_t>(this->_dstView, img, 2);
+                    readImage<uint16_t, rgb_layout_t, rgb16_view_t>(this->_dstView, img, 2);
                     break;
                 case 4:
-                    readImage<bits16, rgba_layout_t, rgba16_view_t>(this->_dstView, img, 2);
+                    readImage<uint16_t, rgba_layout_t, rgba16_view_t>(this->_dstView, img, 2);
                     break;
                 default:
                     img->close();

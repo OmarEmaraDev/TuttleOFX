@@ -69,9 +69,9 @@ Image::~Image()
     // TUTTLE_LOG_VAR( TUTTLE_TRACE, getFullName() );
 }
 
-boost::uint8_t* Image::getPixelData()
+uint8_t* Image::getPixelData()
 {
-    return reinterpret_cast<boost::uint8_t*>(_data->data());
+    return reinterpret_cast<uint8_t*>(_data->data());
 }
 
 void* Image::getVoidPixelData()
@@ -84,7 +84,7 @@ char* Image::getCharPixelData()
     return reinterpret_cast<char*>(_data->data());
 }
 
-boost::uint8_t* Image::getOrientedPixelData(const EImageOrientation orientation)
+uint8_t* Image::getOrientedPixelData(const EImageOrientation orientation)
 {
     if(_orientation == orientation)
     {
@@ -93,11 +93,11 @@ boost::uint8_t* Image::getOrientedPixelData(const EImageOrientation orientation)
     else
     {
         const std::ssize_t distance = getRowAbsDistanceBytes() * (_bounds.y2 - _bounds.y1 - 1);
-        return reinterpret_cast<boost::uint8_t*>(getPixelData() + distance);
+        return reinterpret_cast<uint8_t*>(getPixelData() + distance);
     }
 }
 
-boost::uint8_t* Image::pixel(const int x, const int y)
+uint8_t* Image::pixel(const int x, const int y)
 {
     const OfxRectI bounds = getBounds();
 
@@ -105,7 +105,7 @@ boost::uint8_t* Image::pixel(const int x, const int y)
     {
         const int yOffset = (_orientation == eImageOrientationFromTopToBottom) ? (y - bounds.y1) : (y - bounds.y2);
         const int offset = yOffset * getRowAbsDistanceBytes() + (x - bounds.x1) * _pixelBytes;
-        return reinterpret_cast<boost::uint8_t*>(getPixelData() + offset);
+        return reinterpret_cast<uint8_t*>(getPixelData() + offset);
     }
     return NULL;
 }

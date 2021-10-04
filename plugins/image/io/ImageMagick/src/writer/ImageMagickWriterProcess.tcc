@@ -38,7 +38,7 @@ void ImageMagickWriterProcess<View>::multiThreadProcessImages(const OfxRectI& pr
     ImageMagickWriterProcessParams params = _plugin.getProcessParams(this->_renderArgs.time);
     try
     {
-        writeImage<bits8>(this->_srcView, params._filepath);
+        writeImage<uint8_t>(this->_srcView, params._filepath);
     }
     catch(exception::Common& e)
     {

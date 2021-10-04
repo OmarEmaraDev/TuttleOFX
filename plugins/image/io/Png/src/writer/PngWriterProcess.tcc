@@ -53,10 +53,10 @@ void PngWriterProcess<View>::multiThreadProcessImages(const OfxRectI& procWindow
         switch(_params._bitDepth)
         {
             case eTuttlePluginBitDepth8:
-                writeImage<bits8>(srcView);
+                writeImage<uint8_t>(srcView);
                 break;
             case eTuttlePluginBitDepth16:
-                writeImage<bits16>(srcView);
+                writeImage<uint16_t>(srcView);
                 break;
         }
     }

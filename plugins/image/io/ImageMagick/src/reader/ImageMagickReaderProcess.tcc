@@ -19,20 +19,20 @@
 #else
 #warning "MAGICKCORE_QUANTUM_DEPTH is 8"
 #endif
-#define MAGICKCORE_QUANTUM_SUPPORT boost::uint32_t
+#define MAGICKCORE_QUANTUM_SUPPORT uint32_t
 #elif(MAGICKCORE_QUANTUM_DEPTH == 16)
 #ifdef _MSC_VER
 #pragma NOTE("MAGICKCORE_QUANTUM_DEPTH is 16")
 #else
 #warning "MAGICKCORE_QUANTUM_DEPTH is 16"
 #endif
-#define MAGICKCORE_QUANTUM_SUPPORT boost::uint64_t
+#define MAGICKCORE_QUANTUM_SUPPORT uint64_t
 #elif(MAGICKCORE_QUANTUM_DEPTH == 32)
 #ifdef _MSC_VER
 #pragma NOTE("MAGICKCORE_QUANTUM_DEPTH is 32")
 #else
 #warning "MAGICKCORE_QUANTUM_DEPTH is 32"
-#define MAGICKCORE_QUANTUM_SUPPORT boost::uint64_t
+#define MAGICKCORE_QUANTUM_SUPPORT uint64_t
 #endif
 #endif
 

@@ -43,12 +43,12 @@ void localDoGilRender2(Plugin& plugin, const OFX::RenderArguments& args, const O
     {
         case OFX::eBitDepthUByte:
         {
-            localDoGilRender2<Process, sPlanar, SLayout, SBits, dPlanar, DLayout, boost::gil::bits8>(plugin, args);
+            localDoGilRender2<Process, sPlanar, SLayout, SBits, dPlanar, DLayout, uint8_t>(plugin, args);
             return;
         }
         case OFX::eBitDepthUShort:
         {
-            localDoGilRender2<Process, sPlanar, SLayout, SBits, dPlanar, DLayout, boost::gil::bits16>(plugin, args);
+            localDoGilRender2<Process, sPlanar, SLayout, SBits, dPlanar, DLayout, boost::gil::uint16_t>(plugin, args);
             return;
         }
         case OFX::eBitDepthFloat:
@@ -117,12 +117,12 @@ void localDoGilRender2(Plugin& plugin, const OFX::RenderArguments& args, const O
     {
         case OFX::eBitDepthUByte:
         {
-            localDoGilRender2<Process, sPlanar, SLayout, boost::gil::bits8>(plugin, args, dPlanar, dComponent, dBitDepth);
+            localDoGilRender2<Process, sPlanar, SLayout, uint8_t>(plugin, args, dPlanar, dComponent, dBitDepth);
             return;
         }
         case OFX::eBitDepthUShort:
         {
-            localDoGilRender2<Process, sPlanar, SLayout, boost::gil::bits16>(plugin, args, dPlanar, dComponent, dBitDepth);
+            localDoGilRender2<Process, sPlanar, SLayout, boost::gil::uint16_t>(plugin, args, dPlanar, dComponent, dBitDepth);
             return;
         }
         case OFX::eBitDepthFloat:

@@ -181,7 +181,7 @@ void EXRReaderProcess<View>::channelCopy(Imf::InputFile& input, const EXRReaderP
             }
             case Imf::UINT:
             {
-                initExrChannel<boost::uint32_t>(data[channelIndex], slices[channelIndex], frameBuffer, ch.type,
+                initExrChannel<uint32_t>(data[channelIndex], slices[channelIndex], frameBuffer, ch.type,
                                                 getChannelName(channelIndex), dataWindow);
                 break;
             }

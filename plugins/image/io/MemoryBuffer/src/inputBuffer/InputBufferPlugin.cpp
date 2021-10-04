@@ -26,9 +26,9 @@ inline std::size_t bitDepthMemorySize(const OFX::EBitDepth e)
     switch(e)
     {
         case OFX::eBitDepthUByte:
-            return sizeof(boost::uint8_t);
+            return sizeof(uint8_t);
         case OFX::eBitDepthUShort:
-            return sizeof(boost::uint16_t);
+            return sizeof(uint16_t);
         case OFX::eBitDepthFloat:
             return sizeof(float);
         case OFX::eBitDepthNone:

@@ -48,9 +48,9 @@ inline std::size_t bitDepthMemorySize(const EBitDepth e)
     switch(e)
     {
         case eBitDepthUByte:
-            return sizeof(boost::uint8_t);
+            return sizeof(uint8_t);
         case eBitDepthUShort:
-            return sizeof(boost::uint16_t);
+            return sizeof(uint16_t);
         case eBitDepthFloat:
             return sizeof(float);
         case eBitDepthNone:
