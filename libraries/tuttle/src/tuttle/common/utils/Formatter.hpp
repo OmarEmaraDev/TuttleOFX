@@ -3,6 +3,7 @@
 
 #include "color.hpp"
 
+#include <memory>
 #include <fstream>
 #include <iomanip>
 
@@ -75,7 +76,7 @@ private:
     Formatter();
 
 public:
-    static boost::shared_ptr<Formatter> get();
+    static std::shared_ptr<Formatter> get();
     ~Formatter() {}
 
 private:
@@ -90,7 +91,7 @@ public:
     void displayLogLevel(bool display);
 
 public:
-    static boost::shared_ptr<Formatter> _formatter;
+    static std::shared_ptr<Formatter> _formatter;
 #ifndef WITHOUT_BOOST_LOG
 #ifndef SWIG
     boost::shared_ptr<sink_t> _sink;

@@ -1,6 +1,6 @@
 %include <tuttle/host/global.i>
 
-%include <boost_shared_ptr.i>
+%include <std_shared_ptr.i>
 %include <std_list.i>
 %include <std_string.i>
 

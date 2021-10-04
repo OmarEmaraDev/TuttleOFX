@@ -3,7 +3,7 @@
 %include <tuttle/common/cbytearray.i>
 %include <tuttle/host/ofx/OfxhImage.i>
 
-%include <boost_shared_ptr.i>
+%include <std_shared_ptr.i>
 %include <typemaps.i>
 
 %shared_ptr(tuttle::host::attribute::Image)

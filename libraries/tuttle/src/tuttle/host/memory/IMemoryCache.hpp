@@ -3,7 +3,7 @@
 
 #include "IMemoryPool.hpp"
 
-#include <boost/shared_ptr.hpp> ///< @todo temporary solution..
+#include <memory>
 #include <string>
 
 namespace tuttle
@@ -22,7 +22,7 @@ namespace memory
  * CACHE_ELEMENT should be a smart_ptr of some kind
  * pointer will be stored in a container so no unique_ptr is allowed
  */
-typedef ::boost::shared_ptr<tuttle::host::attribute::Image> CACHE_ELEMENT; ///< @todo temporary solution..
+typedef std::shared_ptr<tuttle::host::attribute::Image> CACHE_ELEMENT; ///< @todo temporary solution..
 
 struct Key
 {

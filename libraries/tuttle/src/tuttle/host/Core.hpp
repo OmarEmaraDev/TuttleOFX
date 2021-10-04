@@ -1,6 +1,8 @@
 #ifndef _TUTTLE_HOST_CORE_HPP_
 #define _TUTTLE_HOST_CORE_HPP_
 
+#include <memory>
+
 #include "version.hpp"
 #include "Preferences.hpp"
 
@@ -13,7 +15,6 @@
 #include <tuttle/common/utils/Formatter.hpp>
 
 #include <boost/preprocessor/stringize.hpp>
-#include <boost/shared_ptr.hpp>
 
 namespace tuttle
 {
@@ -37,7 +38,7 @@ private:
     memory::IMemoryPool& _memoryPool;
     memory::IMemoryCache& _memoryCache;
     bool _isPreloaded;
-    boost::shared_ptr<tuttle::common::Formatter> _formatter;
+    std::shared_ptr<tuttle::common::Formatter> _formatter;
 
     Preferences _preferences;
 

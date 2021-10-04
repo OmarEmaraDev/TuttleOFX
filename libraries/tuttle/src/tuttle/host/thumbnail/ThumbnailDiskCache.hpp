@@ -7,6 +7,7 @@
 
 #include <string>
 #include <cstddef>
+#include <memory>
 
 namespace tuttle
 {
@@ -17,7 +18,7 @@ namespace attribute
 class Image;
 }
 
-::boost::shared_ptr<attribute::Image> loadImage(const std::string& imagePath);
+std::shared_ptr<attribute::Image> loadImage(const std::string& imagePath);
 
 /**
  * @brief An helper to cache image thumbnails on your HDD.
@@ -28,7 +29,7 @@ public:
     static const std::string s_thumbnailExtension;
     static const int s_thumbnailMaxSize;
     typedef DiskCacheTranslator::KeyType KeyType;
-    typedef ::boost::shared_ptr<attribute::Image> TImage;
+    typedef std::shared_ptr<attribute::Image> TImage;
 
 public:
     ThumbnailDiskCache() {}

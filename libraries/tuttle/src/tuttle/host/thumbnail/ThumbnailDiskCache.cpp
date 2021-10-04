@@ -9,13 +9,14 @@
 #include <boost/filesystem/operations.hpp>
 
 #include <ctime>
+#include <memory>
 
 namespace tuttle
 {
 namespace host
 {
 
-::boost::shared_ptr<attribute::Image> loadImage(const std::string& imagePath)
+std::shared_ptr<attribute::Image> loadImage(const std::string& imagePath)
 {
     memory::MemoryCache outputCache;
 
@@ -24,7 +25,7 @@ namespace host
     return outputCache.get(0);
 }
 
-::boost::shared_ptr<attribute::Image>
+std::shared_ptr<attribute::Image>
 loadAndGenerateThumbnail(const std::string& imagePath, const std::string& thumbnailToCreate, const int thumbnailMaxSize)
 {
     memory::MemoryCache outputCache;

@@ -4,9 +4,9 @@
 #include <tuttle/common/system/system.hpp>
 
 #include <boost/utility.hpp>
-#include <boost/shared_ptr.hpp>
 
 #include <string>
+#include <memory>
 
 namespace tuttle
 {
@@ -55,7 +55,7 @@ private:
     Color() {}
 
 public:
-    static boost::shared_ptr<Color> get();
+    static std::shared_ptr<Color> get();
 
     ~Color() {}
 
@@ -99,7 +99,7 @@ public:
     }
 
 public:
-    static boost::shared_ptr<Color> color;
+    static std::shared_ptr<Color> color;
 };
 }
 }

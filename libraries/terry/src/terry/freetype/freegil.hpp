@@ -14,7 +14,6 @@
 #include <boost/gil/image.hpp>
 #include <boost/gil/typedefs.hpp>
 
-#include <boost/shared_ptr.hpp>
 #include <boost/cast.hpp>
 #include <boost/function.hpp>
 #include <boost/bind.hpp>

@@ -8,8 +8,8 @@
 #include <tuttle/common/utils/Formatter.hpp>
 
 #include <tuttle/common/atomic.hpp>
-#include <boost/shared_ptr.hpp>
 
+#include <memory>
 #include <limits>
 #include <list>
 
@@ -254,7 +254,7 @@ public:
     /**
     * @brief A handle to follow the progress (start, end...) of the compute
     */
-    void setProgressHandle(boost::shared_ptr<IProgressHandle> progressHandle) { _progressHandle = progressHandle; }
+    void setProgressHandle(std::shared_ptr<IProgressHandle> progressHandle) { _progressHandle = progressHandle; }
     bool isProgressHandleSet() const { return _progressHandle.get() != NULL; }
     void beginSequenceHandle() const
     {
@@ -303,7 +303,7 @@ private:
 
     boost::atomic_bool _abort;
 
-    boost::shared_ptr<IProgressHandle> _progressHandle;
+    std::shared_ptr<IProgressHandle> _progressHandle;
 };
 }
 }

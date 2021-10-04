@@ -7,7 +7,7 @@
 
 %include <std_string.i>
 
-%include <boost_shared_ptr.i>
+%include <std_shared_ptr.i>
 %include <typemaps.i>
 
 %shared_ptr(tuttle::host::ofx::imageEffect::OfxhImage)

@@ -32,6 +32,7 @@
 #include <iomanip>
 #include <iostream>
 #include <fstream>
+#include <memory>
 #include <list>
 
 namespace tuttle
@@ -1018,7 +1019,7 @@ void ImageEffectNode::debugOutputImage(const OfxTime time) const
         const attribute::ClipImage& clip = dynamic_cast<const attribute::ClipImage&>(*(it->second));
         if(clip.isOutput())
         {
-            boost::shared_ptr<attribute::Image> image =
+            std::shared_ptr<attribute::Image> image =
                 clip.getNode().getData().getInternMemoryCache().get(this->getName() + "." kOfxOutputAttributeName, time);
             image->debugSaveAsPng(boost::lexical_cast<std::string>(time) + "_" + this->getName() + ".png");
         }

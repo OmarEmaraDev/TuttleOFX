@@ -13,14 +13,14 @@ namespace tuttle
 namespace common
 {
 
-boost::shared_ptr<Formatter> Formatter::get()
+std::shared_ptr<Formatter> Formatter::get()
 {
     if(_formatter.get() == NULL)
         _formatter.reset(new Formatter());
     return _formatter;
 }
 
-boost::shared_ptr<Formatter> Formatter::_formatter;
+std::shared_ptr<Formatter> Formatter::_formatter;
 
 Formatter::Formatter()
 {
