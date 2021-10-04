@@ -12,7 +12,7 @@
 #include <terry/numeric/operations.hpp>
 #include <terry/numeric/init.hpp>
 
-#include <boost/gil/extension/color/hsl.hpp>
+#include <boost/gil/extension/toolbox/color_spaces/hsl.hpp>
 #include <boost/gil.hpp>
 
 namespace tuttle

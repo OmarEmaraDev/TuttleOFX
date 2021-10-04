@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 
-#include <boost/gil/extension/io/bmp_io.hpp>
+#include <boost/gil/extension/io/bmp/old.hpp>
 
 #include <boost/gil/extension/opencv/convert.hpp>
 

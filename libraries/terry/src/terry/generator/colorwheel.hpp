@@ -2,7 +2,7 @@
 #define _TERRY_GENERATOR_COLORWHEEL_HPP_
 
 #include <boost/gil/color_convert.hpp>
-#include <boost/gil/extension/color/hsl.hpp>
+#include <boost/gil/extension/toolbox/color_spaces/hsl.hpp>
 #include <boost/math/constants/constants.hpp>
 
 #include <terry/numeric/operations.hpp>

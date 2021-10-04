@@ -1,7 +1,7 @@
 #include "HistogramKeyerHistogramDisplay.hpp"
 
 #include <tuttle/plugin/opengl/gl.h>
-#include <boost/gil/extension/color/hsv.hpp>
+#include <boost/gil/extension/toolbox/color_spaces/hsv.hpp>
 
 namespace tuttle
 {

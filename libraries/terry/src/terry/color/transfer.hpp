@@ -8,7 +8,7 @@
 #include <terry/typedefs.hpp>
 #include <terry/channel.hpp>
 
-//#include <boost/gil/extension/color/hsl.hpp>
+//#include <boost/gil/extension/toolbox/color_spaces/hsl.hpp>
 //#include <boost/gil/extension/color/distribution.hpp>
 
 namespace terry

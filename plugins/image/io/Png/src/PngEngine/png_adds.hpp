@@ -11,8 +11,7 @@ extern "C" {
 #include <boost/static_assert.hpp>
 #include <boost/gil/channel.hpp>
 #include <boost/gil/utilities.hpp>
-#include <boost/gil/extension/io/io_error.hpp>
-#include <boost/gil/extension/io/png_io_private.hpp>
+#include <boost/gil/io/error.hpp>
 
 namespace boost
 {

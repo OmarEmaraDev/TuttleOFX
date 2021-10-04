@@ -9,7 +9,7 @@
 #include <terry/numeric/operations.hpp>
 #include <terry/numeric/assign.hpp>
 
-#include <boost/gil/extension/color/convert.hpp>
+#include <boost/gil/color_convert.hpp>
 #include <boost/gil.hpp>
 
 namespace tuttle

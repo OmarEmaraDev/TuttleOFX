@@ -14,7 +14,7 @@
 #include <terry/numeric/init.hpp>
 #include <terry/numeric/pow.hpp>
 #include <terry/numeric/sqrt.hpp>
-#include <boost/gil/extension/color/hsl.hpp>
+#include <boost/gil/extension/toolbox/color_spaces/hsl.hpp>
 
 #include <boost/units/pow.hpp>
 #include <boost/mpl/vector.hpp>

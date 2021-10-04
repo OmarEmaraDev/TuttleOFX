@@ -14,7 +14,7 @@
 #include <ofxsInteract.h>
 
 #include <boost/gil.hpp>
-#include <boost/gil/extension/color/hsl.hpp>
+#include <boost/gil/extension/toolbox/color_spaces/hsl.hpp>
 
 #include <boost/scoped_ptr.hpp>
 

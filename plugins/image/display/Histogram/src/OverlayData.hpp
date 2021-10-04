@@ -6,7 +6,7 @@
 #include <tuttle/plugin/memory/OfxAllocator.hpp>
 #include <tuttle/plugin/ImageEffectGilPlugin.hpp>
 
-#include <boost/gil/extension/color/hsl.hpp>
+#include <boost/gil/extension/toolbox/color_spaces/hsl.hpp>
 #include <boost/multi_array.hpp>
 #include <boost/array.hpp>
 

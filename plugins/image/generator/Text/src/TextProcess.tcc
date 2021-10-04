@@ -10,7 +10,7 @@
 #include <tuttle/plugin/exceptions.hpp>
 #include <tuttle/common/ofx/core.hpp>
 
-#include <boost/gil/extension/color/hsl.hpp>
+#include <boost/gil/extension/toolbox/color_spaces/hsl.hpp>
 #include <boost/gil.hpp>
 
 #include <boost/filesystem.hpp>

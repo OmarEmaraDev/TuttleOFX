@@ -7,8 +7,7 @@
 
 #include <boost/gil.hpp>
 #include <boost/gil/extension/dynamic_image/dynamic_image_all.hpp>
-#include <boost/gil/extension/io/png_io.hpp>
-#include <boost/gil/extension/io/png_dynamic_io.hpp>
+#include <boost/gil/extension/io/png/old.hpp>
 #include <boost/filesystem/fstream.hpp>
 
 #include <boost/scoped_ptr.hpp>

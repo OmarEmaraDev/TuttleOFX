@@ -3,7 +3,7 @@
 #if(TUTTLE_PNG_EXPORT_BETWEEN_NODES)
 #define int_p_NULL (int*) NULL
 // Should be included first to avoid setjmp.h include troubles
-#include <boost/gil/extension/io/png_io.hpp>
+#include <boost/gil/extension/io/png/old.hpp>
 #endif
 
 #include <tuttle/host/attribute/ClipImage.hpp>

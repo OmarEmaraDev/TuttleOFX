@@ -11,9 +11,9 @@
 #include <sstream>
 
 #include <boost/gil.hpp>
-#include <boost/gil/extension/io/png_dynamic_io.hpp>
-#include <boost/gil/extension/io/jpeg_dynamic_io.hpp>
-#include <boost/gil/extension/io/tiff_dynamic_io.hpp>
+#include <boost/gil/extension/io/png/old.hpp>
+#include <boost/gil/extension/io/jpeg/old.hpp>
+#include <boost/gil/extension/io/tiff/old.hpp>
 
 using namespace boost::gil;
 using namespace tuttle::plugin::lens;

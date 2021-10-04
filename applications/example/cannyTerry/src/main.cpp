@@ -3,7 +3,7 @@
 #define png_infopp_NULL (png_infopp) NULL
 #define int_p_NULL (int*) NULL
 // Should be included first to avoid setjmp.h include troubles
-#include <boost/gil/extension/io/png_io.hpp>
+#include <boost/gil/extension/io/png/old.hpp>
 
 #include <boost/gil.hpp>
 #include <boost/preprocessor/stringize.hpp>

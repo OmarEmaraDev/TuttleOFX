@@ -6,7 +6,7 @@
 
 #include <boost/gil.hpp>
 #include <boost/scoped_ptr.hpp>
-#include <boost/gil/extension/io/png_io.hpp>
+#include <boost/gil/extension/io/png/old.hpp>
 #include <boost/filesystem/fstream.hpp>
 #include <boost/filesystem/path.hpp>
 
