@@ -5,6 +5,7 @@
 #include <boost/gil/channel_algorithm.hpp> // force to use the boostHack version first
 #include <boost/gil.hpp>
 #include <boost/type_traits.hpp>
+#include <boost/mpl/vector_c.hpp>
 
 #define I10_MIN 0    // 0
 #define I10_MAX 1023 // 2^10 - 1
