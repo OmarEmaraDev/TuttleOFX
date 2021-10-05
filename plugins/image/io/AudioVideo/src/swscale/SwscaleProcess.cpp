@@ -1,6 +1,7 @@
 #include "SwscaleProcess.hpp"
 
 #include <AvTranscoder/data/decoded/VideoFrame.hpp>
+#include <AvTranscoder/util.hpp>
 
 namespace tuttle
 {
@@ -24,7 +25,7 @@ void SwscaleProcess::setup(const OFX::RenderArguments& args)
     _params = _plugin.getProcessParams(args.renderScale);
 }
 
-PixelFormat ofxPixelComponentToSwsPixelFormat(const OFX::EPixelComponent component, const OFX::EBitDepth bitDepth)
+AVPixelFormat ofxPixelComponentToSwsPixelFormat(const OFX::EPixelComponent component, const OFX::EBitDepth bitDepth)
 {
     switch(component)
     {
@@ -36,11 +37,11 @@ PixelFormat ofxPixelComponentToSwsPixelFormat(const OFX::EPixelComponent compone
                     BOOST_THROW_EXCEPTION(exception::BitDepthMismatch() << exception::user("Dpx: Unkown bit depth"));
                     break;
                 case OFX::eBitDepthUByte:
-                    return PIX_FMT_RGBA;
+                    return AV_PIX_FMT_RGBA;
                 case OFX::eBitDepthUShort:
-                    return PIX_FMT_NONE;
+                    return AV_PIX_FMT_NONE;
                 case OFX::eBitDepthFloat:
-                    return PIX_FMT_NONE;
+                    return AV_PIX_FMT_NONE;
             }
             break;
         case OFX::ePixelComponentRGB:
@@ -51,11 +52,11 @@ PixelFormat ofxPixelComponentToSwsPixelFormat(const OFX::EPixelComponent compone
                     BOOST_THROW_EXCEPTION(exception::BitDepthMismatch() << exception::user("Dpx: Unkown bit depth"));
                     break;
                 case OFX::eBitDepthUByte:
-                    return PIX_FMT_RGB24;
+                    return AV_PIX_FMT_RGB24;
                 case OFX::eBitDepthUShort:
-                    return PIX_FMT_RGB48;
+                    return AV_PIX_FMT_RGB48;
                 case OFX::eBitDepthFloat:
-                    return PIX_FMT_NONE;
+                    return AV_PIX_FMT_NONE;
             }
             break;
         case OFX::ePixelComponentAlpha:
@@ -66,19 +67,19 @@ PixelFormat ofxPixelComponentToSwsPixelFormat(const OFX::EPixelComponent compone
                     BOOST_THROW_EXCEPTION(exception::BitDepthMismatch() << exception::user("Dpx: Unkown bit depth"));
                     break;
                 case OFX::eBitDepthUByte:
-                    return PIX_FMT_GRAY8;
+                    return AV_PIX_FMT_GRAY8;
                 case OFX::eBitDepthUShort:
-                    return PIX_FMT_GRAY16;
+                    return AV_PIX_FMT_GRAY16;
                 case OFX::eBitDepthFloat:
-                    return PIX_FMT_NONE;
+                    return AV_PIX_FMT_NONE;
             }
             break;
         case OFX::ePixelComponentNone:
         case OFX::ePixelComponentCustom:
-            return PIX_FMT_NONE;
+            return AV_PIX_FMT_NONE;
     }
     BOOST_ASSERT(false);
-    return PIX_FMT_NONE;
+    return AV_PIX_FMT_NONE;
 }
 
 /**
@@ -89,9 +90,9 @@ void SwscaleProcess::multiThreadProcessImages(const OfxRectI& procWindow)
 {
     OFX::EPixelComponent component = this->_src->getPixelComponents();
     OFX::EBitDepth bitDepth = this->_src->getPixelDepth();
-    PixelFormat pixFmt = ofxPixelComponentToSwsPixelFormat(component, bitDepth);
+    AVPixelFormat pixFmt = ofxPixelComponentToSwsPixelFormat(component, bitDepth);
 
-    if(pixFmt == PIX_FMT_NONE)
+    if(pixFmt == AV_PIX_FMT_NONE)
     {
         BOOST_THROW_EXCEPTION(exception::BitDepthMismatch()
                               << exception::user("SwScale: unsupported bit depth / channel input."));
@@ -115,11 +116,11 @@ void SwscaleProcess::multiThreadProcessImages(const OfxRectI& procWindow)
     // "this->_src->getRowDistanceBytes()" is not the same than "this->_src->getBoundsSize().x * pixelBytes"
     // The buffer could contain a padding between lines.
 
-    avtranscoder::VideoFrameDesc srcDesc(_src->getBoundsSize().x, _src->getBoundsSize().y, pixFmt);
+    avtranscoder::VideoFrameDesc srcDesc(_src->getBoundsSize().x, _src->getBoundsSize().y, avtranscoder::getPixelFormatName(pixFmt));
     avtranscoder::VideoFrame src(srcDesc);
     src.getData()[0] = srcPtr;
 
-    avtranscoder::VideoFrameDesc dstDesc(_dst->getBoundsSize().x, _dst->getBoundsSize().y, pixFmt);
+    avtranscoder::VideoFrameDesc dstDesc(_dst->getBoundsSize().x, _dst->getBoundsSize().y, avtranscoder::getPixelFormatName(pixFmt));
     avtranscoder::VideoFrame dst(dstDesc);
     dst.getData()[0] = dstPtr;
 

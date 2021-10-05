@@ -163,7 +163,7 @@ void AVReaderPluginFactory::describeInContext(OFX::ImageEffectDescriptor& desc, 
     /// METADATA PARAMETERS
     AVCodecContext* metaDataContext = avcodec_alloc_context3(NULL);
     avtranscoder::OptionArray metaDataOptions;
-    avtranscoder::loadOptions(metaDataOptions, metaDataContext, AV_OPT_FLAG_DECODING_PARAM | AV_OPT_FLAG_METADATA);
+    avtranscoder::loadOptions(metaDataOptions, metaDataContext, AV_OPT_FLAG_DECODING_PARAM);
     common::addOptionsToGroup(desc, metaGroup, metaDataOptions, common::kPrefixMetaData);
     av_free(metaDataContext);
 

@@ -118,8 +118,8 @@ View& AVReaderProcess<View>::readImage(View& dst, avtranscoder::VideoFrame& imag
 {
     typedef typename FileView::value_type Pixel;
 
-    const size_t width = image.desc()._width;
-    const size_t height = image.desc()._height;
+    const size_t width = image.getWidth();
+    const size_t height = image.getHeight();
     const avtranscoder::PixelProperties pixel = _plugin._inputFile->getProperties()
                                                     .getVideoProperties()
                                                     .at(_plugin._paramVideoStreamIndex->getValue())
