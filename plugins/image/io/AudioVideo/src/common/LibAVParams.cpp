@@ -10,7 +10,6 @@ extern "C" {
 #include <boost/foreach.hpp>
 #include <boost/test/floating_point_comparison.hpp>
 #include <boost/test/tools/old/impl.hpp>
-#include <boost/bind/bind.hpp>
 
 #include <iostream>
 #include <limits>
@@ -335,7 +334,8 @@ avtranscoder::Option& LibAVParams::getLibAVOption(const std::string& libAVOption
     avtranscoder::OptionArray& optionsArray = _avOptions.at(detailedName);
 
     avtranscoder::OptionArray::iterator iterOption = std::find_if(
-        optionsArray.begin(), optionsArray.end(), boost::bind(&avtranscoder::Option::getName, _1) == libAVOptionName);
+        optionsArray.begin(), optionsArray.end(), [&](avtranscoder::Option option) {
+        return option.getName() == libAVOptionName; });
     const size_t optionIndex = std::distance(optionsArray.begin(), iterOption);
 
     if(optionIndex >= optionsArray.size())
