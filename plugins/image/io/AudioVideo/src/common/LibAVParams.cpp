@@ -9,6 +9,7 @@ extern "C" {
 
 #include <boost/foreach.hpp>
 #include <boost/test/floating_point_comparison.hpp>
+#include <boost/test/tools/old/impl.hpp>
 #include <boost/bind/bind.hpp>
 
 #include <iostream>
@@ -214,7 +215,7 @@ avtranscoder::ProfileLoader::Profile LibAVParams::getCorrespondingProfile(const 
             if(paramDouble)
             {
                 if(boost::test_tools::check_is_close(libavOption.getDefaultDouble(), paramDouble->getValue(),
-                                                     boost::test_tools::percent_tolerance(0.5)))
+                                                     boost::math::fpc::percent_tolerance(0.5)))
                     continue;
 
                 libavOptionValue = boost::to_string(paramDouble->getValue());
