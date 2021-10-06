@@ -7,7 +7,7 @@
 #include <boost/mpl/at.hpp>
 
 #include <boost/gil/channel.hpp>
-#include <boost/gil/gil_concept.hpp>
+#include <boost/gil/concepts.hpp>
 #include <boost/gil/utilities.hpp>
 
 #include <algorithm>

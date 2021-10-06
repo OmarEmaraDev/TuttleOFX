@@ -2,7 +2,7 @@
 #define _TERRY_ALGORITHM_TRANSFORM_PIXELS_PROGRESS_HPP_
 
 #include <boost/gil/channel.hpp>
-#include <boost/gil/gil_concept.hpp>
+#include <boost/gil/concepts.hpp>
 #include <boost/gil/color_base_algorithm.hpp>
 #include <boost/gil/image_view.hpp>
 #include <boost/gil/image_view_factory.hpp>
