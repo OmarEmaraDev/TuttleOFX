@@ -1,9 +1,14 @@
-
 # Macros used to create an openfx plugin with tuttle
 include(TuttleMacros)
 
 tuttle_ofx_plugin_target(Exr)
 
 # Add external libraries
-set(Exr_LIBRARIES OpenEXR Imath sequenceParser)
+set(Exr_LIBRARIES sequenceParser)
 tuttle_ofx_plugin_add_libraries(Exr "${Exr_LIBRARIES}")
+
+find_package(OpenEXR)
+target_link_libraries(Exr OpenEXR::OpenEXR)
+
+find_package(Imath)
+target_link_libraries(Exr Imath::Imath)

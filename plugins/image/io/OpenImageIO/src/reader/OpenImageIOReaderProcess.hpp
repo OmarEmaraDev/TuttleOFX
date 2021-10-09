@@ -8,7 +8,7 @@
 #include <boost/scoped_ptr.hpp>
 #include <boost/filesystem/fstream.hpp>
 
-#include <imageio.h>
+#include <OpenImageIO/imageio.h>
 
 namespace tuttle
 {

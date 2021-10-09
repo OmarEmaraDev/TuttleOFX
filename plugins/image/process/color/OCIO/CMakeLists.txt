@@ -3,4 +3,6 @@ include(TuttleMacros)
 
 # Declare the plugin
 tuttle_ofx_plugin_target(OCIO)
-tuttle_ofx_plugin_add_library(OCIO OpenColorIO)
+
+find_package(OpenColorIO)
+target_link_libraries(OCIO OpenColorIO::OpenColorIO)

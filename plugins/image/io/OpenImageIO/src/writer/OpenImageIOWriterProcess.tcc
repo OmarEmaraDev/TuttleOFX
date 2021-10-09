@@ -7,8 +7,8 @@
 
 #include <tuttle/plugin/exceptions.hpp>
 
-#include <imageio.h>
-#include <filesystem.h>
+#include <OpenImageIO/imageio.h>
+#include <OpenImageIO/filesystem.h>
 #include <ctime>
 
 #include <boost/gil.hpp>

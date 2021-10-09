@@ -5,7 +5,7 @@
 
 #include <tuttle/ioplugin/context/WriterPlugin.hpp>
 
-#include <typedesc.h>
+#include <OpenImageIO/typedesc.h>
 
 namespace tuttle
 {
