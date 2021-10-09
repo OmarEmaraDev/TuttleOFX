@@ -4,7 +4,7 @@
 #include <terry/globals.hpp>
 #include <tuttle/plugin/exceptions.hpp>
 
-#include <imageio.h>
+#include <OpenImageIO/imageio.h>
 
 #include <boost/gil.hpp>
 #include <boost/gil/extension/dynamic_image/dynamic_image_all.hpp>
@@ -12,8 +12,9 @@
 #include <boost/mpl/map.hpp>
 #include <boost/mpl/at.hpp>
 
-#include <boost/scoped_ptr.hpp>
 #include <boost/assert.hpp>
+
+#include <memory>
 
 namespace tuttle
 {
@@ -47,13 +48,13 @@ void OpenImageIOReaderProcess<View>::multiThreadProcessImages(const OfxRectI& pr
 
     std::string filename = _plugin.getProcessParams(this->_renderArgs.time)._filepath;
 
-    boost::scoped_ptr<OpenImageIO::ImageInput> img(OpenImageIO::ImageInput::create(filename));
+    std::unique_ptr<OIIO::ImageInput> img(OIIO::ImageInput::create(filename));
 
     if(img.get() == NULL)
     {
         BOOST_THROW_EXCEPTION(OFX::Exception::Suite(kOfxStatErrValue));
     }
-    OpenImageIO::ImageSpec spec;
+    OIIO::ImageSpec spec;
 
     if(!img->open(filename, spec))
     {
@@ -63,8 +64,8 @@ void OpenImageIOReaderProcess<View>::multiThreadProcessImages(const OfxRectI& pr
 
     switch(spec.format.basetype)
     {
-        case OpenImageIO::TypeDesc::UINT8:
-        case OpenImageIO::TypeDesc::INT8:
+        case OIIO::TypeDesc::UINT8:
+        case OIIO::TypeDesc::INT8:
         {
             switch(spec.nchannels)
             {
@@ -84,9 +85,9 @@ void OpenImageIOReaderProcess<View>::multiThreadProcessImages(const OfxRectI& pr
             }
             break;
         }
-        case OpenImageIO::TypeDesc::HALF:
-        case OpenImageIO::TypeDesc::UINT16:
-        case OpenImageIO::TypeDesc::INT16:
+        case OIIO::TypeDesc::HALF:
+        case OIIO::TypeDesc::UINT16:
+        case OIIO::TypeDesc::INT16:
         {
             switch(spec.nchannels)
             {
@@ -106,12 +107,12 @@ void OpenImageIOReaderProcess<View>::multiThreadProcessImages(const OfxRectI& pr
             }
             break;
         }
-        case OpenImageIO::TypeDesc::UINT32:
-        case OpenImageIO::TypeDesc::INT32:
-        case OpenImageIO::TypeDesc::UINT64:
-        case OpenImageIO::TypeDesc::INT64:
-        case OpenImageIO::TypeDesc::FLOAT:
-        case OpenImageIO::TypeDesc::DOUBLE:
+        case OIIO::TypeDesc::UINT32:
+        case OIIO::TypeDesc::INT32:
+        case OIIO::TypeDesc::UINT64:
+        case OIIO::TypeDesc::INT64:
+        case OIIO::TypeDesc::FLOAT:
+        case OIIO::TypeDesc::DOUBLE:
         {
             switch(spec.nchannels)
             {
@@ -131,11 +132,11 @@ void OpenImageIOReaderProcess<View>::multiThreadProcessImages(const OfxRectI& pr
             }
             break;
         }
-        case OpenImageIO::TypeDesc::STRING:
-        case OpenImageIO::TypeDesc::PTR:
-        case OpenImageIO::TypeDesc::LASTBASE:
-        case OpenImageIO::TypeDesc::UNKNOWN:
-        case OpenImageIO::TypeDesc::NONE:
+        case OIIO::TypeDesc::STRING:
+        case OIIO::TypeDesc::PTR:
+        case OIIO::TypeDesc::LASTBASE:
+        case OIIO::TypeDesc::UNKNOWN:
+        case OIIO::TypeDesc::NONE:
         default:
         {
             img->close();
@@ -150,11 +151,11 @@ void OpenImageIOReaderProcess<View>::multiThreadProcessImages(const OfxRectI& pr
  */
 template <class View>
 template <typename bitDepth, typename layout, typename fileView>
-View& OpenImageIOReaderProcess<View>::readImage(View& dst, boost::scoped_ptr<OpenImageIO::ImageInput>& img, int pixelSize)
+View& OpenImageIOReaderProcess<View>::readImage(View& dst, std::unique_ptr<OIIO::ImageInput>& img, int pixelSize)
 {
     using namespace boost;
     using namespace boost::gil;
-    using namespace OpenImageIO;
+    using namespace OIIO;
 
     typedef pixel<bitDepth, layout> pixel_t;
     typedef image<pixel_t, false> image_t;

@@ -2,11 +2,12 @@
 #include "OpenImageIOReaderProcess.hpp"
 #include "OpenImageIOReaderDefinitions.hpp"
 
-#include <imageio.h>
+#include <OpenImageIO/imageio.h>
 
 #include <boost/gil.hpp>
 #include <boost/filesystem.hpp>
-#include <boost/scoped_ptr.hpp>
+
+#include <memory>
 
 namespace tuttle
 {
@@ -48,13 +49,13 @@ bool OpenImageIOReaderPlugin::getRegionOfDefinition(const OFX::RegionOfDefinitio
                                                                   << exception::filename(filename));
     }
 
-    boost::scoped_ptr<OpenImageIO::ImageInput> in(OpenImageIO::ImageInput::create(filename));
+    std::unique_ptr<OIIO::ImageInput> in(OIIO::ImageInput::create(filename));
     if(!in)
     {
         BOOST_THROW_EXCEPTION(exception::File() << exception::user("OpenImageIO: Unable to open file")
                                                 << exception::filename(filename));
     }
-    OpenImageIO::ImageSpec spec;
+    OIIO::ImageSpec spec;
 
     if(!in->open(filename, spec))
     {
@@ -92,7 +93,7 @@ void OpenImageIOReaderPlugin::getClipPreferences(OFX::ClipPreferencesSetter& cli
         return;
     }
 
-    OpenImageIO::ImageInput* in = OpenImageIO::ImageInput::create(filename);
+    OIIO::ImageInput* in = OIIO::ImageInput::create(filename).get();
 
     if(!in)
     {
@@ -100,7 +101,7 @@ void OpenImageIOReaderPlugin::getClipPreferences(OFX::ClipPreferencesSetter& cli
                                                    << exception::filename(filename));
     }
 
-    OpenImageIO::ImageSpec spec;
+    OIIO::ImageSpec spec;
     if(!in->open(filename, spec))
     {
         BOOST_THROW_EXCEPTION(exception::Unknown() << exception::user("OIIO Reader: " + in->geterror())
@@ -113,35 +114,35 @@ void OpenImageIOReaderPlugin::getClipPreferences(OFX::ClipPreferencesSetter& cli
         switch(spec.format.basetype)
         {
             //			case TypeDesc::UCHAR:
-            case OpenImageIO::TypeDesc::UINT8:
+            case OIIO::TypeDesc::UINT8:
             //			case TypeDesc::CHAR:
-            case OpenImageIO::TypeDesc::INT8:
+            case OIIO::TypeDesc::INT8:
                 bd = OFX::eBitDepthUByte;
                 break;
-            case OpenImageIO::TypeDesc::HALF:
+            case OIIO::TypeDesc::HALF:
             //			case TypeDesc::USHORT:
-            case OpenImageIO::TypeDesc::UINT16:
+            case OIIO::TypeDesc::UINT16:
             //			case TypeDesc::SHORT:
-            case OpenImageIO::TypeDesc::INT16:
+            case OIIO::TypeDesc::INT16:
                 bd = OFX::eBitDepthUShort;
                 break;
             //			case TypeDesc::UINT:
-            case OpenImageIO::TypeDesc::UINT32:
+            case OIIO::TypeDesc::UINT32:
             //			case TypeDesc::INT:
-            case OpenImageIO::TypeDesc::INT32:
+            case OIIO::TypeDesc::INT32:
             //			case TypeDesc::ULONGLONG:
-            case OpenImageIO::TypeDesc::UINT64:
+            case OIIO::TypeDesc::UINT64:
             //			case TypeDesc::LONGLONG:
-            case OpenImageIO::TypeDesc::INT64:
-            case OpenImageIO::TypeDesc::FLOAT:
-            case OpenImageIO::TypeDesc::DOUBLE:
+            case OIIO::TypeDesc::INT64:
+            case OIIO::TypeDesc::FLOAT:
+            case OIIO::TypeDesc::DOUBLE:
                 bd = OFX::eBitDepthFloat;
                 break;
-            case OpenImageIO::TypeDesc::STRING:
-            case OpenImageIO::TypeDesc::PTR:
-            case OpenImageIO::TypeDesc::LASTBASE:
-            case OpenImageIO::TypeDesc::UNKNOWN:
-            case OpenImageIO::TypeDesc::NONE:
+            case OIIO::TypeDesc::STRING:
+            case OIIO::TypeDesc::PTR:
+            case OIIO::TypeDesc::LASTBASE:
+            case OIIO::TypeDesc::UNKNOWN:
+            case OIIO::TypeDesc::NONE:
             default:
             {
                 in->close();

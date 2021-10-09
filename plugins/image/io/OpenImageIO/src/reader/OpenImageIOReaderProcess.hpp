@@ -5,10 +5,11 @@
 
 #include <terry/globals.hpp>
 
-#include <boost/scoped_ptr.hpp>
 #include <boost/filesystem/fstream.hpp>
 
 #include <OpenImageIO/imageio.h>
+
+#include <memory>
 
 namespace tuttle
 {
@@ -43,7 +44,7 @@ public:
     void multiThreadProcessImages(const OfxRectI& procWindowRoW);
 
     template <typename bitDepth, typename layout, typename fileView>
-    View& readImage(View& dst, boost::scoped_ptr<OpenImageIO::ImageInput>& img, int pixelSize);
+    View& readImage(View& dst, std::unique_ptr<OIIO::ImageInput>& img, int pixelSize);
 
     static bool progressCallback(void* opaque_data, float portion_done)
     {

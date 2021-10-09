@@ -13,11 +13,12 @@
 
 #include <boost/gil.hpp>
 #include <boost/gil/extension/dynamic_image/dynamic_image_all.hpp>
-#include <boost/scoped_ptr.hpp>
 #include <boost/filesystem/fstream.hpp>
 #include <boost/mpl/map.hpp>
 #include <boost/mpl/integral_c.hpp>
 #include <boost/mpl/at.hpp>
+
+#include <memory>
 
 namespace tuttle
 {
@@ -45,7 +46,7 @@ ETuttlePluginBitDepth OpenImageIOWriterProcess<View>::getDefaultBitDepth(const s
 {
     if(bitDepth == eTuttlePluginBitDepthAuto)
     {
-        std::string format = OpenImageIO::Filesystem::extension(filepath);
+        std::string format = OIIO::Filesystem::extension(filepath);
         if(format.find("exr") != std::string::npos || format.find("hdr") != std::string::npos ||
            format.find("rgbe") != std::string::npos)
         {
@@ -483,10 +484,10 @@ void OpenImageIOWriterProcess<View>::writeImage(View& src, const std::string& fi
                                                 const ETuttlePluginBitDepth& bitDepth)
 {
     using namespace boost;
-    using namespace OpenImageIO;
+    using namespace OIIO;
     using namespace terry::color::components;
 
-    boost::scoped_ptr<ImageOutput> out(ImageOutput::create(filepath));
+    std::unique_ptr<ImageOutput> out(ImageOutput::create(filepath));
     if(out.get() == NULL)
     {
         BOOST_THROW_EXCEPTION(exception::Bug() << exception::user("OIIO Writer: error from writer while opening file."));
@@ -498,7 +499,7 @@ void OpenImageIOWriterProcess<View>::writeImage(View& src, const std::string& fi
     typename WImage::view_t vw(view(img));
     convertComponentsView(src, vw, parameters);
 
-    OpenImageIO::TypeDesc oiioBitDepth;
+    OIIO::TypeDesc oiioBitDepth;
     size_t sizeOfChannel = 0;
     int bitsPerSample = 0;
 
