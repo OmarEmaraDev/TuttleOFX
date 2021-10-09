@@ -19,6 +19,7 @@
 #include <ofxsMultiThread.h>
 
 #include <ImfChannelList.h>
+#include <ImfHeader.h>
 #include <ImfArray.h>
 #include <ImathVec.h>
 

@@ -9,6 +9,7 @@
 #include <ofxsMultiThread.h>
 
 #include <ImfInputFile.h>
+#include <ImfFrameBuffer.h>
 
 #include <boost/scoped_ptr.hpp>
 

@@ -8,6 +8,9 @@
 #include <tuttle/plugin/ImageGilProcessor.hpp>
 #include <tuttle/plugin/exceptions.hpp>
 
+#include <ImfFrameBuffer.h>
+#include <ImfHeader.h>
+
 #include <boost/gil.hpp>
 #include <boost/mpl/if.hpp>
 #include <boost/cstdint.hpp>
