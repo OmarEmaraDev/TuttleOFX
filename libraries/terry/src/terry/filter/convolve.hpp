@@ -1,10 +1,8 @@
 #ifndef _TERRY_FILTER_CONVOLVE_HPP_
 #define _TERRY_FILTER_CONVOLVE_HPP_
 
-#include "correlate.hpp"
 #include "detail/kernel.hpp"
 
-#include <terry/numeric/scalar.hpp>
 #include <terry/numeric/init.hpp>
 #include <terry/numeric/assign.hpp>
 
