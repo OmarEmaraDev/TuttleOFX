@@ -93,7 +93,7 @@ void OpenImageIOReaderPlugin::getClipPreferences(OFX::ClipPreferencesSetter& cli
         return;
     }
 
-    OIIO::ImageInput* in = OIIO::ImageInput::create(filename).get();
+    std::unique_ptr<OIIO::ImageInput> in = OIIO::ImageInput::create(filename);
 
     if(!in)
     {
