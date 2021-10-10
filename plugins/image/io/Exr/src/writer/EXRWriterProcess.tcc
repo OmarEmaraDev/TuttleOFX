@@ -62,47 +62,47 @@ void EXRWriterProcess<View>::multiThreadProcessImages(const OfxRectI& procWindow
         {
             case eTuttlePluginFileBitDepth16f:
             {
-                switch(_params._componentsType)
-                {
-                    case eTuttlePluginComponentsAuto:
-                    {
-                        switch(_plugin._clipSrc->getPixelComponents())
-                        {
-                            case OFX::ePixelComponentAlpha:
-                                writeImage<gray16h_pixel_t>(src, _params._filepath, Imf::HALF);
-                                break;
-                            case OFX::ePixelComponentRGB:
-                                writeImage<rgb16h_pixel_t>(src, _params._filepath, Imf::HALF);
-                                break;
-                            case OFX::ePixelComponentRGBA:
-                                writeImage<rgba16h_pixel_t>(src, _params._filepath, Imf::HALF);
-                                break;
-                            default:
-                                BOOST_THROW_EXCEPTION(exception::Unsupported()
-                                                      << exception::user("Exr Writer: components not supported"));
-                                break;
-                        }
-                        break;
-                    }
-                    case eTuttlePluginComponentsGray:
-                    {
-                        writeImage<gray16h_pixel_t>(src, _params._filepath, Imf::HALF);
-                        break;
-                    }
-                    case eTuttlePluginComponentsRGB:
-                    {
-                        writeImage<rgb16h_pixel_t>(src, _params._filepath, Imf::HALF);
-                        break;
-                    }
-                    case eTuttlePluginComponentsRGBA:
-                    {
-                        writeImage<rgba16h_pixel_t>(src, _params._filepath, Imf::HALF);
-                        break;
-                    }
-                    default:
-                        BOOST_THROW_EXCEPTION(exception::Unsupported()
-                                              << exception::user("Exr Writer: components not supported"));
-                }
+            //    switch(_params._componentsType)
+            //    {
+            //        case eTuttlePluginComponentsAuto:
+            //        {
+            //            switch(_plugin._clipSrc->getPixelComponents())
+            //            {
+            //                case OFX::ePixelComponentAlpha:
+            //                    writeImage<gray16h_pixel_t>(src, _params._filepath, Imf::HALF);
+            //                    break;
+            //                case OFX::ePixelComponentRGB:
+            //                    writeImage<rgb16h_pixel_t>(src, _params._filepath, Imf::HALF);
+            //                    break;
+            //                case OFX::ePixelComponentRGBA:
+            //                    writeImage<rgba16h_pixel_t>(src, _params._filepath, Imf::HALF);
+            //                    break;
+            //                default:
+            //                    BOOST_THROW_EXCEPTION(exception::Unsupported()
+            //                                          << exception::user("Exr Writer: components not supported"));
+            //                    break;
+            //            }
+            //            break;
+            //        }
+            //        case eTuttlePluginComponentsGray:
+            //        {
+            //            writeImage<gray16h_pixel_t>(src, _params._filepath, Imf::HALF);
+            //            break;
+            //        }
+            //        case eTuttlePluginComponentsRGB:
+            //        {
+            //            writeImage<rgb16h_pixel_t>(src, _params._filepath, Imf::HALF);
+            //            break;
+            //        }
+            //        case eTuttlePluginComponentsRGBA:
+            //        {
+            //            writeImage<rgba16h_pixel_t>(src, _params._filepath, Imf::HALF);
+            //            break;
+            //        }
+            //        default:
+            //            BOOST_THROW_EXCEPTION(exception::Unsupported()
+            //                                  << exception::user("Exr Writer: components not supported"));
+            //    }
                 break;
             }
             case eTuttlePluginFileBitDepth32f:

@@ -354,38 +354,38 @@ void OpenImageIOWriterProcess<View>::multiThreadProcessImages(const OfxRectI& pr
             }
             case eTuttlePluginBitDepth16f:
             {
-                switch(params._components)
-                {
-                    case eTuttlePluginComponentsAuto:
-                    {
-                        switch(_plugin._clipSrc->getPixelComponents())
-                        {
-                            case OFX::ePixelComponentAlpha:
-                                writeImage<gray16h_image_t>(this->_srcView, params._filepath, params._bitDepth);
-                                break;
-                            case OFX::ePixelComponentRGB:
-                                writeImage<rgb16h_image_t>(this->_srcView, params._filepath, params._bitDepth);
-                                break;
-                            case OFX::ePixelComponentRGBA:
-                                writeImage<rgba16h_image_t>(this->_srcView, params._filepath, params._bitDepth);
-                                break;
-                            default:
-                                BOOST_THROW_EXCEPTION(exception::Unsupported()
-                                                      << exception::user("OIIO Writer: components not supported"));
-                                break;
-                        }
-                        break;
-                    }
-                    case eTuttlePluginComponentsGray:
-                        writeImage<gray16h_image_t>(this->_srcView, params._filepath, params._bitDepth);
-                        break;
-                    case eTuttlePluginComponentsRGBA:
-                        writeImage<rgba16h_image_t>(this->_srcView, params._filepath, params._bitDepth);
-                        break;
-                    case eTuttlePluginComponentsRGB:
-                        writeImage<rgb16h_image_t>(this->_srcView, params._filepath, params._bitDepth);
-                        break;
-                }
+            //    switch(params._components)
+            //    {
+            //        case eTuttlePluginComponentsAuto:
+            //        {
+            //            switch(_plugin._clipSrc->getPixelComponents())
+            //            {
+            //                case OFX::ePixelComponentAlpha:
+            //                    writeImage<gray16h_image_t>(this->_srcView, params._filepath, params._bitDepth);
+            //                    break;
+            //                case OFX::ePixelComponentRGB:
+            //                    writeImage<rgb16h_image_t>(this->_srcView, params._filepath, params._bitDepth);
+            //                    break;
+            //                case OFX::ePixelComponentRGBA:
+            //                    writeImage<rgba16h_image_t>(this->_srcView, params._filepath, params._bitDepth);
+            //                    break;
+            //                default:
+            //                    BOOST_THROW_EXCEPTION(exception::Unsupported()
+            //                                          << exception::user("OIIO Writer: components not supported"));
+            //                    break;
+            //            }
+            //            break;
+            //        }
+            //        case eTuttlePluginComponentsGray:
+            //            writeImage<gray16h_image_t>(this->_srcView, params._filepath, params._bitDepth);
+            //            break;
+            //        case eTuttlePluginComponentsRGBA:
+            //            writeImage<rgba16h_image_t>(this->_srcView, params._filepath, params._bitDepth);
+            //            break;
+            //        case eTuttlePluginComponentsRGB:
+            //            writeImage<rgb16h_image_t>(this->_srcView, params._filepath, params._bitDepth);
+            //            break;
+            //    }
                 break;
             }
             case eTuttlePluginBitDepth32:
