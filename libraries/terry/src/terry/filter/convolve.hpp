@@ -1,13 +1,11 @@
 #ifndef _TERRY_FILTER_CONVOLVE_HPP_
 #define _TERRY_FILTER_CONVOLVE_HPP_
 
-#include "correlate.hpp"
 #include "detail/kernel.hpp"
 
-#include <terry/numeric/scalar.hpp>
 #include <terry/numeric/init.hpp>
 #include <terry/numeric/assign.hpp>
-
+#include <boost/gil/extension/numeric/algorithm.hpp>
 #include <boost/gil/channel.hpp>
 #include <boost/gil/image_view_factory.hpp>
 #include <boost/gil/algorithm.hpp>

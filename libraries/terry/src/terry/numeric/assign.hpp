@@ -92,16 +92,7 @@ pixel_assigns_scalar(const Scalar s, PixelR& dst)
     pixel_assigns_scalar_t<Scalar, PixelR>()(s, dst);
 }
 
-template <typename SrcIterator, typename DstIterator>
-BOOST_FORCEINLINE DstIterator assign_pixels(SrcIterator src, SrcIterator src_end, DstIterator dst)
-{
-    algorithm::for_each(
-        src, src_end, dst,
-        pixel_assigns_t<typename pixel_proxy<typename std::iterator_traits<SrcIterator>::value_type>::type,
-                        typename pixel_proxy<typename std::iterator_traits<DstIterator>::value_type>::type>());
 
-    return dst + (src_end - src);
-}
 }
 }
 
