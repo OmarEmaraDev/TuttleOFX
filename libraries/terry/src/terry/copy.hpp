@@ -11,24 +11,24 @@ namespace detail_copy_channel
 {
 
 template <class Channel, class View>
-void copy_channel_if_exist(const View& src, const View& dst, const boost::mpl::true_)
+void copy_channel_if_exist(const View& src, const View& dst, const boost::mp11::mp_true)
 {
     using namespace boost::gil;
     copy_pixels(channel_view<Channel>(src), channel_view<Channel>(dst));
 }
 template <class Channel, class View>
-void copy_channel_if_exist(const View& src, const View& dst, const boost::mpl::false_)
+void copy_channel_if_exist(const View& src, const View& dst, const boost::mp11::mp_false)
 {
 }
 
 template <class Channel, class Pixel>
-void copy_pixel_channel_if_exist(const Pixel& src, const Pixel& dst, const boost::mpl::true_)
+void copy_pixel_channel_if_exist(const Pixel& src, const Pixel& dst, const boost::mp11::mp_true)
 {
     using namespace boost::gil;
     get_color(dst, Channel()) = get_color(src, Channel());
 }
 template <class Channel, class Pixel>
-void copy_pixel_channel_if_exist(const Pixel& src, const Pixel& dst, const boost::mpl::false_)
+void copy_pixel_channel_if_exist(const Pixel& src, const Pixel& dst, const boost::mp11::mp_false)
 {
 }
 }
