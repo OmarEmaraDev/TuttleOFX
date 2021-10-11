@@ -28,18 +28,6 @@ struct channel_zeros_t : public std::unary_function<Channel, Channel>
     }
 };
 
-/// \ingroup PixelNumericOperations
-/// \brief construct for setting a pixel to zero (for whatever zero means)
-template <typename PixelRef> // models pixel concept
-struct pixel_zeros_t
-{
-    BOOST_FORCEINLINE
-    PixelRef& operator()(PixelRef& p) const
-    {
-        static_for_each(p, channel_zeros_t<typename channel_type<PixelRef>::type>());
-        return p;
-    }
-};
 
 template <typename Pixel>
 BOOST_FORCEINLINE Pixel& pixel_zeros(Pixel& p)
