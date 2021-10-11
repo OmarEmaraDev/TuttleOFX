@@ -54,9 +54,9 @@ private:
     void render(const OFX::RenderArguments& args);
 
     template <class View, template <typename> class Functor>
-    void render_if(const OFX::RenderArguments& args, boost::mpl::false_);
+    void render_if(const OFX::RenderArguments& args, boost::mp11::mp_false);
     template <class View, template <typename> class Functor>
-    void render_if(const OFX::RenderArguments& args, boost::mpl::true_);
+    void render_if(const OFX::RenderArguments& args, boost::mp11::mp_true);
 
 public:
     OFX::StringParam* _paramText; ///< the text to rasterize in the image
