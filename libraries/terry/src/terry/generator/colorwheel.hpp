@@ -54,7 +54,7 @@ struct ColorWheelFunctor
 
         if(sqrt(y * y + x * x) > 0.5)
         {
-            numeric::pixel_zeros_t<Pixel>()(pixel);
+            pixel_zeros_t<Pixel>()(pixel);
             return pixel;
         }
 

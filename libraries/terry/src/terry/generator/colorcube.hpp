@@ -51,7 +51,7 @@ struct ColorCubeFunctor
         if(std::abs(x) > 0.5 || std::abs(y) > 0.5)
         {
             Pixel pixel;
-            numeric::pixel_zeros_t<Pixel>()(pixel);
+            pixel_zeros_t<Pixel>()(pixel);
             return pixel;
         }
 
