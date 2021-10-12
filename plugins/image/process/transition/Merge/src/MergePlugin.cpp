@@ -408,7 +408,7 @@ void MergePlugin::render(const OFX::RenderArguments& args)
 }
 
 template <class View, template <typename> class Functor>
-void MergePlugin::render_if(const OFX::RenderArguments& args, boost::mpl::true_)
+void MergePlugin::render_if(const OFX::RenderArguments& args, boost::mp11::mp_true)
 {
     typedef typename View::value_type Pixel;
     MergeProcess<View, Functor<Pixel> > p(*this);
@@ -416,7 +416,7 @@ void MergePlugin::render_if(const OFX::RenderArguments& args, boost::mpl::true_)
 }
 
 template <class View, template <typename> class Functor>
-void MergePlugin::render_if(const OFX::RenderArguments& args, boost::mpl::false_)
+void MergePlugin::render_if(const OFX::RenderArguments& args, boost::mp11::mp_false)
 {
     BOOST_THROW_EXCEPTION(exception::Unsupported() << exception::user() + "Need an alpha channel for this Merge operation.");
 }
@@ -428,7 +428,7 @@ void MergePlugin::render(const OFX::RenderArguments& args)
     typedef typename boost::gil::contains_color<typename View::value_type, boost::gil::alpha_t>::type has_alpha_t;
     typedef typename boost::is_same<typename Functor<Pixel>::operating_mode_t, terry::merge_per_channel_with_alpha>::type
         merge_need_alpha_t;
-    typedef typename boost::mpl::if_<merge_need_alpha_t, has_alpha_t, boost::mpl::true_>::type render_condition_t;
+    typedef typename boost::mpl::if_<merge_need_alpha_t, has_alpha_t, boost::mp11::mp_true>::type render_condition_t;
 
     render_if<View, Functor>(args, render_condition_t());
 }
