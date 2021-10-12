@@ -48,14 +48,17 @@ add_subdirectory(image/process/filter/Convolution)# Not found
 #add_subdirectory(image/process/filter/NlmDenoiser)
 #add_subdirectory(image/process/filter/Sobel)# Error: Ambiguous fn
 
-#add_subdirectory(image/process/filter/Thinning)# Error: non-constant-expression cannot be narrowed from type 'long' to 'int' in initializer list
+# Error: non-constant-expression cannot be narrowed from type 'long' to 'int' in initializer list
+#add_subdirectory(image/process/filter/Thinning)
 #add_subdirectory(image/process/geometry/Crop)
 #add_subdirectory(image/process/geometry/LensDistort)
 #add_subdirectory(image/process/geometry/Pinning)
 
 add_subdirectory(image/process/geometry/Flip)
 add_subdirectory(image/process/geometry/Move2D)# Not found
-#add_subdirectory(image/process/geometry/PushPixel)# Error: no type named 'gil' in namespace 'boost'
+
+# Error: no type named 'gil' in namespace 'boost'
+#add_subdirectory(image/process/geometry/PushPixel)
 #add_subdirectory(image/process/geometry/Resize)
 
 add_subdirectory(image/process/geometry/Warp)# Not found
